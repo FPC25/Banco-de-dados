@@ -1,0 +1,30 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+A função $f(t) = t$ é uma função ímpar, então já sabemos que não é preciso calcular $a_0 = a_k = 0$, dessa forma temos que calcular somente o coeficiente de Fourier $b_k$. Contudo antes disso, temos que lembrar que existem condições especiais quando multiplicamos funções pares e ímpares
+\begin{enumerate}[i]
+    \item função par x função par = função par;
+    \item função ímpar x função par = função ímpar;
+    \item função ímpar x função ímpar = função par;
+\end{enumerate}
+
+Dessa forma, como tanto $f(t) = t$ e a função seno são funções ímpares, teremos que a função resultante do produto delas é uma função par. Portanto podemos reescrever a equação de $b_k$ como:
+\begin{equation*}
+    b_k = \frac{4}{T}\int_0^{T/2} f(t)sin(kwt)dt
+\end{equation*}
+
+sabemos também que $w=\frac{2\pi}{T}$ e resolvemos a próxima integral por partes:
+\begin{equation*}
+    b_k = \frac{4}{T}\int_0^{T/2} tsin(kwt)dt = \frac{4}{T}\left\{\left[\frac{-tcos(kwt)}{kw}\right]^{T/2}_0 + \int^{T/2}_0 \frac{cos(kwt}{kw}dt\right\} = 
+\end{equation*}
+\begin{equation*}
+     = \frac{4}{T}\left\{\left[\frac{-T}{2}cos(k\frac{2\pi T}{2T}) - 0 \right]+ \frac{1}{kw}\left[\frac{sin(kwt)}{kw}\right]\right\} = \frac{4}{T}\left\{\frac{-Tcos(k\pi)}{2kw}+\frac{1}{(kw)^2}\left[sin(k\frac{2\pi T}{2T}) - sin(0)\right]\right\}
+\end{equation*}
+\begin{equation*}
+    = \frac{4}{T}\left[-\frac{-T(-1)^k}{2kw} + \frac{sin(k\pi))}{(kw)^ 2}\right] \therefore b_k = \frac{-2(-1)^k}{kw}
+\end{equation*}
+Resultando assim na seguinte série de Fourier:
+\begin{equation*}
+    \boxed{ f(t) = \sum_{k=1}^\infty \frac{-2(-1)^k}{kw}sin(kwt) }
+\end{equation*}

@@ -1,0 +1,36 @@
+%Fourier Real
+\begin{equation}
+    \label{eq:Fourierserie}
+    f(t) = a_0 + \sum_{k=1}^\infty a_k\cos{(kwt)} + b_k\sin{(kwt)}
+\end{equation}
+\begin{equation}
+    \label{eq:a0Fourier}
+    a_0 = \frac{1}{T}\int_0^T f(x)dx
+\end{equation}
+\begin{equation}
+    \label{eq:akFourier}
+    a_k = \frac{2}{T}\int_0^T f(x)\cos{(kwx)}dx
+\end{equation}
+\begin{equation}
+    \label{eq:bkFourier}
+    b_k = \frac{2}{T}\int_0^T f(x)\sin{(kwx)}dx
+\end{equation}
+
+%Fourier Complexo
+\begin{equation}
+    \label{eq:Fouriercomplexa}
+    f(x) = \sum^{+\infty}_{k=-\infty} c_k e^{ikwx}
+\end{equation}
+\begin{equation}
+    \label{eq:ckFouerier}
+    c_k = \frac{1}{T} \int^T_0 f(x)e^{-ikwx}dx
+\end{equation}
+
+%equivalencia
+\begin{equation*}
+    \begin{cases}
+    a_0 = c_0\\
+    a_k = (c_k + c_{-k})\hspace{0.3cm}para\hspace{0.3cm}k\in\N\\
+    b_k = i(c_k - c_{-k})\hspace{0.3cm}para\hspace{0.3cm}k\in\N
+    \end{cases}
+\end{equation*}

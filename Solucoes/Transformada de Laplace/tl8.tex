@@ -1,0 +1,58 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+Vamos aplicar a transformada de Laplace:
+
+\begin{equation*}
+    \mathcal{L}\{y'' + 9y\} = \mathcal{L}\{sin(4t)\} \Rightarrow sY(s) - sy(0) - y'(0) + 9Y(s) = \frac{4}{s^2+16}
+\end{equation*}
+Sabendo que $y(0) = 0$ e $y'(0) = 5$, então:
+\begin{equation*}
+    s^2Y(s) - 5 + 9Y(s) = \frac{4}{s^2+16} \Rightarrow (s^2+9)Y(s) = \frac{4}{s^2+16} + 5 \Rightarrow Y(s) = \frac{4}{(s^2+16)(s^2+9)} + \frac{5}{s^2+9}
+\end{equation*}
+
+Pelos Resíduos teremos que:
+\begin{equation*}
+    Y(s) = \frac{4}{(s+4i)(s-4i)(s+3i)(s-3i)} + \frac{5}{(s-3i)(s+3i)} = Y_1(s) + Y_2(s)
+\end{equation*}
+
+Dessa forma $Y_1(s)$ tem polos simples em $s=4i$, $s=-4i$, $s=3i$ e $s=-3i$ e $Y_2(s)$ tem polos simples em $s=3i$ e $s=-3i$
+\begin{equation*}
+    Res[Y_1(s)e^{st}, s=3i] = \lim_{s->3i} \frac{\cancel{(s-3i)}4e^{st}}{\cancel{(s-3i)}(s^2+16)(s+3i)} = \frac{4e^{3it}}{42i}=\frac{2e^{3it}}{21i}
+\end{equation*}
+\begin{equation*}
+    Res[Y_1(s)e^{st}, s=-3i] = \lim_{s->-3i} \frac{\cancel{(s+3i)}4e^{st}}{\cancel{(s+3i)}(s^2+16)(s-3i)} = \frac{4e^{-3it}}{-42i}=\frac{-2e^{-3it}}{21i}
+\end{equation*}
+\begin{equation*}
+    Res[Y_1(s)e^{st}, s=4i] = \lim_{s->4i} \frac{\cancel{(s-4i)}4e^{st}}{\cancel{(s-4i)}(s^2+9)(s+4i)} = \frac{4e^{4it}}{-56i}=\frac{-e^{4it}}{14i}
+\end{equation*}
+\begin{equation*}
+    Res[Y_1(s)e^{st}, s=-4i] = \lim_{s->-4i} \frac{\cancel{(s+4i)}4e^{st}}{\cancel{(s+4i)}(s^2+9)(s-4i)} = \frac{4e^{-4it}}{56i}=\frac{e^{-4it}}{14i}
+\end{equation*}
+Assim:
+\begin{equation*}
+    y_1(t) = \frac{4}{21}\frac{(e^{3it}-e^{-3it})}{2i} + \frac{2}{14}\frac{(e^{4it}-e^{-4it})}{2i} = \frac{4}{21}sin(3t) - \frac{1}{7}sin(4t)
+\end{equation*}
+
+\begin{equation*}
+    Y_2(s) = \frac{5}{(s^2+9)}
+\end{equation*}
+
+\begin{equation*}
+    Res[Y_2(s)e^{st}, s=3i] = \lim_{s->3i} \frac{\cancel{(s-3i)}5e^{st}}{\cancel{(s-3i)}(s+3i)} = \frac{4e^{3it}}{6i}
+\end{equation*}
+\begin{equation*}
+    Res[Y_2(s)e^{st}, s=-3i] = \lim_{s->-3i} \frac{\cancel{(s+3i)}5e^{st}}{\cancel{(s+3i)}(s-3i)} = \frac{5e^{-3it}}{-6i}
+\end{equation*}
+
+\begin{equation*}
+    y_2(t) = \frac{5}{3}sin(3t) = 
+\end{equation*}
+Assim:
+\begin{equation*}
+    y(t) = y_1(t) + y_2(t) = \frac{4}{21}sin(3t) - \frac{1}{7}sin(4t) + \frac{5}{3}sin(3t) \Rightarrow \boxed{y(t) =  \frac{117}{63}sin(3t) - \frac{1}{7}sin(4t)}
+\end{equation*}
+solução particular sujeita às condições iniciais.

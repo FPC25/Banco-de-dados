@@ -1,0 +1,75 @@
+\linespread{1.5}
+
+\textbf{\textit{Solução}}
+Como é uma E.D.O. de segunda ordem de coeficientes constantes não homogênea  teremos que utilizar o método de Lagrange. Sabemos que:
+\begin{equation*}
+    y_G(t) = y_H(t) + y_P(t)
+\end{equation*}
+onde 
+\begin{itemize}
+    \item $y_G(t)$ é a solução geral da equação;
+    \item $y_H(t)$ é a solução da homogênea ;
+    \item $y_P(t)$ é a solução particular.
+\end{itemize}
+
+Resolvemos então primeiramente a homogênea:
+\begin{equation*}
+    y''(t) - y'(t) - 6y(t) = 0
+\end{equation*}
+Temos o seguinte polinômio característico:
+\begin{equation*}
+    p^2 - p - 6p = 0 \rightarrow p = \frac{1 \pm 5}{2}
+\end{equation*}
+Nos dando que:
+\begin{equation*}
+    \begin{cases}
+        p_1 = 3\\
+        p_2 = -2
+    \end{cases}
+\end{equation*}
+então:
+\begin{equation*}
+    \begin{cases}
+        y_1 = C_1e^{3t}\\
+        y_2 = C_2e^{-2t}
+    \end{cases}
+\end{equation*}
+
+então:
+\begin{equation*}
+    y_H = C_1e^{3t} + C_2e^{-2t}
+\end{equation*}
+
+Agora voltemos buscamos a solução da particular pelo método de Lagrange. Para isso descobrimos o determinante da matriz:
+\begin{equation*}
+    W = \begin{vmatrix} 
+        y_1' & y_2'\\
+        y_1  & y_2
+        \end{vmatrix} = 
+        \begin{vmatrix} 
+        3C_1e^{3t} & -2C_2e^{-2t}\\
+        C_1e^{3t} &  C_2e^{-2t}
+        \end{vmatrix} = 3C_1C_2e^t - (-2)C_1C_2e^t = 5C_1C_2e^t
+\end{equation*}
+
+e agora determinamos $y_P$:
+\begin{equation*}
+  y_P = y_1u_1 + y_2u_2 = y_1\int \frac{r(t)y_2}{W} dt + y_2\int \frac{-r(t)y_1}{W} dt = (I) + (II)
+\end{equation*}
+onde $r(t) = 3e^{-t}$. Resolvendo $(I)$:
+\begin{equation*}
+    (I) = \cancel{C_1}e^{3t}\int \frac{3e^{-t}\cancel{C_2}e^{-2t}}{5\cancel{C_1}\cancel{C_2}e^t}dt = \frac{3e^{3t}}{5}\int e^{-4t}dt = \frac{3e^{3t}}{5}\left(\frac{-e^{-4t}}{4}\right) = \frac{-3e^{-t}}{20}
+\end{equation*}
+Resolvendo $(II)$:
+\begin{equation*}
+    (II) = \cancel{C_2}e^{-2t}\int \frac{-3e^{-t}\cancel{C_1}e^{3t}}{5\cancel{C_1}\cancel{C_2}e^t}dt = \frac{-3e^{-2t}}{5}\int e^tdt = \frac{-3e^{-2t}}{5}e^t = \frac{-3e^{-t}}{5}
+\end{equation*}
+Assim:
+\begin{equation*}
+    y_P = \frac{-3e^{-t}}{20} - \frac{3e^{-t}}{5} = -\frac{-3e^{-t}}{4}
+\end{equation*}
+
+Desta forma, quando somamos as soluções particular e homogênea obtemos que a geral é:
+\begin{equation*}
+    y_G = C_1e^{3t} + C_2e^{-2t} - \frac{-3e^{-t}}{4}
+\end{equation*}

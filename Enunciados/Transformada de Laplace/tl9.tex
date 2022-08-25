@@ -1,0 +1,32 @@
+\linespread{1.5}
+Seja o eixo y dirigido verticalmente para baixo, e considere uma bolinha de ping-pong em y=0, abandonada em repouso no instante $t=0$, caindo sob ação da aceleração gravitacional \textit{g}. Considerando que a única força atuante sobre a bolinha é a força peso, o movimento da mesma é descrito pela equação diferencial:
+\begin{equation}
+    \centering
+    \label{eq:forca}
+    y''(t) = g
+\end{equation}
+Resolvendo a equação \ref{eq:forca}, sujeita às condições iniciais $y(0)=0, y'(0) = 0$, tem-se que o movimento da bolinha é dado por:
+\begin{equation}
+    \centering
+    \label{eq:mov}
+    y(t) = \frac{1}{2}gt^2
+\end{equation}
+Sendo sua velocidade
+\begin{equation}
+    \centering
+    \label{eq:velo}
+    y'(t) = gt
+\end{equation}
+Considere agora a queda da bolinha sob a ação gravitacional e da resistência do ar. Assumindo que a resistência do ar seja viscosa, a mesma aplica à bolinha uma aceleração proporcional à velocidade, em sentido oposto à velocidade. Nessas condições, o movimento da bolinha é descrito pela equação diferencial:
+\begin{equation}
+    \centering
+    \label{eq:resis}
+    y''(t) = g - \lambda y'(t)
+\end{equation}
+sendo $\lambda$ uma constante que caracteriza a resistência do ar. Exposto o problema acima, pede-se:
+\begin{itemize}
+    \item[\textbf{a)}] Fazendo uso da transformada de Laplace, determine $y(t)$, solução particular da E.D.O. dada em \ref{eq:resis}, sujeita às condições iniciais $y(0) = 0$ e $y'(0) = 0$;
+    \item[\textbf{b)}] Faça um esboço dos gráficos de $y(t)$ e $y'(t)$, os quais respectivamente representam a posição e a velocidade da bolinha em função do tempo;
+    \item[\textbf{c)}]Mostre que eliminando a resistência do ar, isto é, fazendo $\lambda$ ir a zero, então $y(t)$ e $y'(t)$ obtidas em \textbf{a)} reduzem-se às equações \ref{eq:mov} e \ref{eq:velo}.
+\end{itemize}
+

@@ -1,0 +1,69 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aqui temos uma edo linear de 2ª ordem não homogênea. Desta forma teremos que resolver essa pelo método de Lagrange. Dado esse método, temos que a solução geral é dado por:
+\begin{equation*}
+    y_G = y_H + y_P
+\end{equation*}
+
+sendo $y_H$ a solução da edo homogênea e $y_P$ é a solução da particular não-homogênea. Dessa forma solucionamos primeiramente a homogênea:
+\begin{equation*}
+    y''+5y'+4y=0
+\end{equation*}
+sabemos que a solução dessa equação é do tipo $Ce^{px}$, assim, derivando e substituido temos 
+\begin{equation*}
+    Ce^{px}(p^2+5p+4)=0
+\end{equation*}
+Tomemos que $C\neq 0 $, então o polinômio característico é dado por:
+\begin{equation*}
+    p^2+5p+4=0
+\end{equation*}
+que por Baskara, temos que:
+\begin{equation*}
+    \begin{cases}
+    p = -1\\
+    p = -4
+    \end{cases}
+\end{equation*}
+Assim as soluções da homogênea é dado por:
+\begin{equation*}
+    \begin{cases}
+    y_1 = C_1e^{-x}\\
+    y_2 = C_2e^{-4x}
+    \end{cases}
+\end{equation*}
+e então, pelo princípio da sobreposição, a solução da homogênea também é:
+\begin{equation*}
+    y_H = y_1 + y_2 = C_1e^{-x} + C_2e^{-4x} 
+\end{equation*}
+
+Com isso agora podemos resolver a particular pelo método de Lagrange:
+\begin{equation*}
+    y_P = y_1\int \frac{r(x)y_2}{W}dx + y_2\int \frac{-r(x)y_1}{W} dx
+\end{equation*}
+onde $r(x) = 10e^{-3x}$ e $W$ é o Wronskiano, que calcularemos primeiro:
+\begin{equation*}
+    W = det\begin{vmatrix}
+    y'_1 & y'_2\\
+    y_1 & y_2
+    \end{vmatrix} = det\begin{vmatrix}
+    -C_1e^{-x} & -4C_2e^{-4x} \\
+    C_1e^{-x} & C_2e^{-4x} \\
+    \end{vmatrix} =  -C_1C_2e^{-5x} + 4C_1C_2e^{-5x} = 3C_1C_2e^{-5x}
+\end{equation*}
+
+\begin{equation*}
+    y_P = \cancel{C_1}e^{-x}\int \frac{10e^{-3x}\cancel{C_2}e^{-4x}}{3\cancel{C_1}\cancel{C_2}e^{-5x}} dx + \cancel{C_2}e^{-4x}\int \frac{-10e^{-3x}\cancel{C_1}e^{-x}}{3\cancel{C_1}\cancel{C_2}e^{-5x}}dx
+\end{equation*}
+\begin{equation*}
+    y_P = \frac{10e^{-x}}{3}\int e^{-2x} dx - \frac{10e^{-4x}}{3} \int e^x dx = \frac{10e^{-x}}{3}\frac{e^{-2x}}{-2} - \frac{10e^{-4x}}{3}e^x = \frac{-5e^{-3x}}{3} - \frac{10e^{-3x}}{3} = \frac{-15e^{-3x}}{3}
+\end{equation*}
+\begin{equation*}
+    y_P = -5e^{-3x}
+\end{equation*}
+
+Por fim juntamos as soluções homogênea e particular, obtendo assim a solução geral da equação:
+\begin{equation*}
+    \boxed{y_G = C_1e^{-x} + C_2e^{-4x} -5e^{-3x}} 
+\end{equation*}

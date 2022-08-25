@@ -1,0 +1,59 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+Como $f(t)$ é uma função ímpar, temos não é necessário calcular $a_0$ e $a_k$, pois $a_0 = a_k = 0$, e temos que nesse caso especial:
+\begin{equation*}
+    b_k = \frac{4}{T}\int_0^{T/2} f(t) sin(kwt)dt = \int_0^2 h sin(kwt)dt = h\left[\frac{-cos(kwt}{kw}\right]^2_0 = \frac{2h}{k\pi}[-cos(\frac{2k\pi}{2}) + cos(0)]
+\end{equation*}
+com $cos(k\pi) = (-1)^k$
+\begin{equation*}
+    b_k = \frac{2h[1-(-1)^k]}{k\pi}
+\end{equation*}
+mas para todo \textit{k} par $b_k = 0$, logo, teremos que para \textit{k} ímpar teremos:
+\begin{equation*}
+    b_k = \frac{4h}{(2k-1)\pi}
+\end{equation*}
+Assim a série de Fourier real é dada por:
+\begin{equation*}
+    \boxed{ f(t) = \sum_{k=1}^\infty \frac{4h}{(2k-1)\pi}sin\left(\frac{(2k-1)\pi t}{2}\right) }
+\end{equation*}
+
+\textbf{b)}
+
+Aqui, teremos que:
+\begin{equation*}
+    y(t) = \iint f(t) dtdt
+\end{equation*}
+
+logo:
+\begin{equation*}
+    y'(t) = \int f(t) dt = \int \left[\sum_{k=1}^\infty \frac{4h}{(2k-1)\pi}sin\left(\frac{(2k-1)\pi t}{2}\right)\right]dt
+\end{equation*}
+
+E neste caso as operações de integral e somatório são intercambiáveis, desta forma:
+
+\begin{equation*}
+    y'(t) = \sum_{k=1}^\infty \frac{4h}{(2k-1)\pi}\int \left[sin\left(\frac{(2k-1)\pi t}{2}\right)\right]dt = \sum_{k=1}^\infty \frac{4h}{(2k-1)\pi}(I)
+\end{equation*}
+
+Por fins de simplicidade vamos chamar $a = \frac{(2k-1)\pi t}{2}$, logo a integral que temos que resolver é:
+\begin{equation*}
+    (I) = \int sin(at)dt = \frac{-1}{a}cos(at)
+\end{equation*}
+
+Logo:
+\begin{equation*}
+    y'(t) = \sum_{k=1}^\infty \frac{2h}{a}\left(\frac{-1}{a}cos(at)\right) = \sum_{k=1}^\infty \frac{-2h}{a^2}cos(at)
+\end{equation*}
+
+De forma análoga resolvemos para:
+\begin{equation*}
+    y(t) = \int y'(t) dt = \int \left[\sum_{k=1}^\infty \frac{-2h}{a^2}cos(at)\right] dt = \sum_{k=1}^\infty \frac{-2h}{a^2} \int cos(at) dt = \sum_{k=1}^\infty \frac{-2h}{a^3}sin(at)
+\end{equation*}
+
+Voltando então $a = \frac{(2k-1)\pi t}{2}$, teremos que:
+\begin{equation*}
+    \boxed{y(t) = \sum_{k=1}^\infty \frac{-16h}{(2k-1)^3\pi^3}sin\left(\frac{(2k-1)\pi t }{2}\right)}
+\end{equation*}

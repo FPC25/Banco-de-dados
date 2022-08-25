@@ -1,0 +1,50 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Como o primeiro passo da solução da equação é a mesma, por questões de simplicidade, resolvemos de forma geral, para depois entrar em cada caso. O polinômio característico da E.D.O. é dado por:
+\begin{equation*}
+    p^2 + \lambda p + 4 = 0 \therefore p_{1,2} = \frac{-\lambda\pm\sqrt{\lambda^2 - 16}}{2}
+\end{equation*}
+
+\textbf{a)}
+
+Com $\lambda=0$, $p_1 = 2i$ e $p_2=-2i$. Dessa forma temos duas soluções:
+\begin{equation*}
+    \begin{cases}
+    y_1 = C_1e^{2it}\\
+    y_2 = C_2e^{-2it}
+    \end{cases}
+\end{equation*}
+Pelo principio da superposição temos que:
+\begin{equation*}
+    y(t) = y_1(t) + y_2(t) = C_1e^{2it} + C_2e^{-2it}
+\end{equation*}
+Onde $C_1$ e $C_2$ são duas constantes arbitrárias:
+\begin{equation*}
+    y(t) = C_1(cos(2t) + isin(2t)) + C_2(cos(2t) - isin(2t)) = (C_1 + C_2)cos(2t) + i(C_1-C_2)sin(2t)
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+     (C_1 + C_2) = C\\
+     i(C_1-C_2) = D
+    \end{cases}
+\end{equation*}
+Dessa forma a solução da equação homogênea é dada por:
+\begin{equation*}
+    \boxed{y_H = y_G = Ccos(2t) + Dsin(2t)}
+\end{equation*}
+
+\textbf{b)}
+
+Para $\lambda=5$, temos que:
+\begin{equation*}
+    p_{1,2} = \frac{-5\pm \sqrt{25 - 16}}{2}\\\Rightarrow\begin{cases}
+     p_1 = -1\\
+     p_2 = -4
+    \end{cases}
+\end{equation*}
+Como a E.D.O. homogênea é do tipo $y=Ce^{pt}$ e pelo princípio da sobreposição, a solução da homogênea e por consequência, neste caso, da geral é dado por:
+\begin{equation*}
+    \boxed{y_H = y_G = C_1e^{-t} + C_2e^{-4t}}
+\end{equation*}

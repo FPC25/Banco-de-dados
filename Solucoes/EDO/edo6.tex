@@ -1,0 +1,66 @@
+\linespread{1.5}
+
+\textit{\textbf{Solução}}
+Como é uma E.D.O. de segunda ordem de coeficientes constantes não homogênea  teremos que utilizar o método de Lagrange. Sabemos que:
+\begin{equation*}
+    y_G(x) = y_H(x) + y_P(x)
+\end{equation*}
+onde 
+\begin{itemize}
+    \item $y_G(t)$ é a solução geral da equação;
+    \item $y_H(t)$ é a solução da homogênea ;
+    \item $y_P(t)$ é a solução particular.
+\end{itemize}
+
+Resolvemos então primeiramente a homogênea. Dada a equação diferencial temos que, tomando a solução do tipo $ y(t) = Ce^pt $ podemos obter que o polinômio característico é dado por:
+\begin{equation*}
+    p^2 - 1 = 0 \Longleftrightarrow p = \pm 1
+\end{equation*}
+
+dessa forma as soluções são:
+\begin{equation*}
+    \begin{cases}
+    y_1 = C_1e^x\\
+    y_2 = C_2e^{-x}
+    \end{cases}
+\end{equation*}
+
+E pelo princípio da superposição é dado que a solução geral é:
+\begin{equation*}
+    y_H(t) = C_1e^x + C_2e^{-x}
+\end{equation*}
+
+Agora voltemos buscamos a solução da particular pelo método de Lagrange. Para isso descobrimos o determinante da matriz:
+\begin{equation*}
+    W = \begin{vmatrix} 
+        y_1' & y_2'\\
+        y_1  & y_2
+        \end{vmatrix} = 
+        \begin{vmatrix} 
+        C_1e^{x} & -C_2e^{-x}\\
+        C_1e^{x} &  C_2e^{-x}
+        \end{vmatrix} = C_1C_2 - (-C_1C_2) = 2C_1C_2
+\end{equation*}
+
+e agora determinamos $y_P$:
+\begin{equation*}
+  y_P = y_1u_1 + y_2u_2 = y_1\int \frac{r(x)y_2}{W} dx + y_2\int \frac{-r(x)y_1}{W} dx = (I) + (II)
+\end{equation*}
+onde $r(x) = len(x)$. Resolvendo $(I)$:
+\begin{equation*}
+    (I) = y_1\int \frac{r(x)y_2}{W} dx = \cancel{C_1}e^x\int \frac{ln(x)\cancel{C_2}e^{-x}}{2\cancel{C_1}\cancel{C_2}} dx = e^x\left(\frac{-e^{-x}ln(x) - Ei(-x)}{2}\right) = \frac{-ln(x) - e^xEi(-x)}{2}
+\end{equation*}
+
+\begin{equation*}
+    (II) = y_2\int -\frac{r(x)y_1}{W} dx = \cancel{C_2}e^{-x}\int -\frac{ln(x)\cancel{C_1}e^{x}}{2\cancel{C_1}\cancel{C_2}} dx = e^{-x}\left(\frac{-e^{x}ln(x) + Ei(x)}{2}\right) = \frac{-ln(x) + e^{-x}Ei(x)}{2}
+\end{equation*}
+
+onde $Ei(x) = \int \frac{e^x}{x} dx$, integral exponencial sem solução analítica. Assim a solução da particular é dada por:
+\begin{equation*}
+    y_P (x) = \frac{-2ln(x) - e^xEi(-x) + e^{-x}Ei(x)}{2}
+\end{equation*}
+
+Dessa forma a solução geral é dada por:
+\begin{equation*}
+    y_G (x) = C_1e^x + C_2e^{-x} + \frac{-2ln(x) - e^xEi(-x) + e^{-x}Ei(x)}{2}
+\end{equation*}

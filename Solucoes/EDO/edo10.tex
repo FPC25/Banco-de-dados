@@ -1,0 +1,53 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+Aqui é uma EDO de primeira ordem não homogênea. Para solucionarmos procuramos um fator integrante de forma que:
+
+\begin{equation*}
+    f(x)y'(x) + f(x)p(x)y(x) = f(x)r(x) 
+\end{equation*}
+
+onde a solução da EDO é dada por:
+\begin{equation*}
+    y_G = \frac{1}{f(x)}\left(\int r(x)f(x) dx + C \right)
+\end{equation*}
+
+e \begin{equation*}
+    f(x) = e^{\int p(x) dx}
+\end{equation*}
+
+Nesse caso $p(x) = tan(x)$ e $r(x) = sin(2x)$
+
+então:
+\begin{equation*}
+    f(x) = e^{\int tan(x) dx} = e^{-ln(cos(x))} = sec(x)
+\end{equation*}
+
+assim;
+
+\begin{equation*}
+    \int sin(2x)sec(x) dx = -2cos(x)
+\end{equation*}
+
+Dessa forma teremos que:
+
+\begin{equation*}
+    y_G = \frac{1}{sec(x)}(-2cos(x) + C) = -2cos^2(x) + Ccos(x)
+\end{equation*}
+\begin{equation*}
+    \boxed{y_G = -2cos^2(x) + Ccos(x)}
+\end{equation*}
+
+\textbf{b)} Se y(0) = 1, então teremos que:
+
+\begin{equation*}
+    -2cos^2(0) + Ccos(0) = 1 \rightarrow -2 + C = 1 \rightarrow C = 3
+\end{equation*}
+
+Dessa forma a solução particular quando y(0) = 1 é:
+\begin{equation*}
+    \boxed{y_P = cos(x)(-2cos(x) + 3)}
+\end{equation*}

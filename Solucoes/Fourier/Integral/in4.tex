@@ -1,0 +1,25 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+As condições para que a função $f(x) = e^{-4x}$ possa ser escrita como uma integral de Fourier Real estão presentes no chamado Teorema de Fourier, onde f(x):
+\begin{enumerate}[I]
+    \item é seccionalmente contínua em todo o intervalo;
+    \item tem suas derivadas laterais finitas em todos os pontos do intervalo no qual a função está definida;
+    \item se a função f(x) é absolutamente integrável, $\int_{-\infty}^\infty |f(x)|dx < \infty$
+\end{enumerate}
+
+\textbf{b)}
+
+Para a função $f(x) = e^{-4x}$, sabemos que é uma função contínua em todo seu intervalo, bem como sabemos que suas derivadas laterais são finitas no intervalo, então precisamos verificar se é uma função absolutamente integrável:
+\begin{equation*}
+    \int_{-\infty}^\infty |f(x)|dx = \int_{-\infty}^\infty |e^{-4x}|dx
+\end{equation*}
+Como $f(x) > 0 \hspace{.3cm}\forall x\in\Z$:
+\begin{equation*}
+    \int_{-\infty}^\infty e^{-4x}dx = \left[\frac{-e^{-4x}}{4}\right]_{-\infty}^\infty = \frac{1}{4}\left[\lim_{x\rightarrow-\infty} e^{-4x} - \lim_{x\rightarrow\infty} e^{-4x}\right] = \frac{1}{4}[\infty - 0 ] = \infty
+\end{equation*}
+
+Portanto, nesse intervalo definido, a função diverge e portanto não podemos representá-la como uma integral de Fourier 

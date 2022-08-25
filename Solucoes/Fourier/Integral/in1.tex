@@ -1,0 +1,118 @@
+\linespread{1.5}
+
+\textbf{Solução}
+%Integral
+A integral é dada por 
+\begin{equation*}
+    f(x) = \int_0^\infty [A(w)cos(wx) + B(w)sin(wx)]dw
+\end{equation*}
+onde:
+\begin{equation*}
+    A(w) = \frac{1}{\pi}\int_{-\infty}^\infty f(v) cos(wv)dv
+\end{equation*}
+e
+\begin{equation*}
+    B(w) = \frac{1}{\pi} \int_{-\infty}^\infty f(v) sin(wv)dv
+\end{equation*}
+
+como para $x, k> 0$ a função $f(x)$ é absolutamente convergente, já que $\int_0^\infty |e^{-kx}|dx = \int_0^\infty e^{-kx}dx = \frac{1}{k}$ e $f(x)$ é seccionalmente contínua, pelo teorema de Fouerier a integral de Fourier existe. Logo:
+\begin{equation*}
+    A(w) = \frac{1}{\pi}\int_0^\infty e^{-kv} cos(wv)dv = \frac{1}{\pi} (I)
+\end{equation*}
+\begin{equation*}
+    (I) = \left\{\left[\frac{cos(wv)e^{-kv}}{-k}\right]^\infty_0 - \int_0^\infty \frac{-wsin(wv)e^{-kv}}{-k}dv\right\} 
+\end{equation*}
+\begin{equation*}
+    = \left\{\left[\frac{cos(wv)e^{-kv}}{-k}\right]^\infty_0 - \left[\frac{-wsin(wv)e^{-kv}}{k^2}\right]^\infty_0 + \int_0^\infty \frac{-w^2cos(wv)e^{-kv}}{k^2}dv \right\}
+\end{equation*}
+\begin{equation*}
+     \int_0^\infty e^{-kv} cos(wv)dv  + \int_0^\infty \frac{w^2cos(wv)e^{-kv}}{k^2}dv = \left[\frac{-cos(wv)e^{-kv}}{k}\right]^\infty_0 + \left[\frac{wsin(wv)e^{-kv}}{k^2}\right]^\infty_0
+\end{equation*}
+\begin{equation*}
+    \left(\frac{w^2 + k^2}{k^2}\right)\int_0^\infty e^{-kv} cos(wv)dv = \frac{1}{k^2}\left\{\left[-kcos(wv)e^{-kv}\right]^\infty_0 + \left[wsin(wv)e^{-kv}\right]^\infty_0\right\}
+\end{equation*}
+\begin{equation*}
+    \int_0^\infty e^{-kv} cos(wv)dv = \frac{1}{w^2 + k^2}\left\{\left[-kcos(wv)e^{-kv}\right]^\infty_0 + \left[wsin(wv)e^{-kv}\right]^\infty_0\right\} = \frac{1}{w^2 + k^2}\{(II) + (III)\}
+\end{equation*}
+
+\begin{equation*}
+    (II) = -k (\lim_{v\rightarrow \infty}-kcos(wv)e^{-kv} - 1)
+\end{equation*}
+
+Para resolver esse limite, utilizamos o \underline{teorema do confronto}. Como a função cosseno é limitad entre $-1$ e $1$, logo temos que:
+\begin{equation*}
+    -1\leq cos(wv) \leq 1
+\end{equation*}
+
+Multiplicando a expressão acima por $e^{-kv}$, obtemos:
+\begin{equation*}
+    -e^{-kv} \leq e^{-kv}cos(wv) \leq e^{-kv}
+\end{equation*}
+Tirando o limite da expressão acima, temos:
+\begin{equation*}
+    - \lim_{v\rightarrow \infty}e^{-kv} \leq  \lim_{v\rightarrow \infty}e^{-kv}cos(wv) \leq  \lim_{v\rightarrow \infty}e^{-kv}
+\end{equation*}
+\begin{equation*}
+    0 \leq  \lim_{v\rightarrow \infty}e^{-kv}cos(wv) \leq  0
+\end{equation*}
+
+Portanto:
+\begin{equation*}
+    \boxed{\lim_{v\rightarrow \infty}e^{-kv}cos(wv) =  0}
+\end{equation*}
+O mesmo raciocínio se utiliza para (III) e temos que:
+\begin{equation*}
+    \boxed{\lim_{v\rightarrow \infty}we^{-kv}sen(wv) =  0}
+\end{equation*}
+
+\begin{equation*}
+    \int_0^\infty e^{-kv} cos(wv)dv = \frac{1}{w^2 + k^2}k = \frac{k}{k^2+ w^2}
+\end{equation*}
+\begin{equation*}
+    \boxed{A(w) = \frac{k}{\pi(k^2+w^2)}}
+\end{equation*}
+
+Por fim resolvemos $B(w)$
+\begin{equation*}
+    B(w) = \frac{1}{\pi}\int_0^\infty e^{-kv}sin(wv)dv = \frac{1}{\pi}(IV)
+\end{equation*}
+
+\begin{equation*}
+    \int_0^\infty e^{-kv}sin(wv)dv = \left[\frac{sin(wv)e^{-kv}}{-k}\right]^\infty_0 - \int_0^\infty \frac{wcos(wv)e^{-kv}}{-k}dv
+\end{equation*}
+\begin{equation*}
+    = \left[\frac{sin(wv)e^{-kv}}{-k}\right]^\infty_0 - \left\{\left[\frac{wcos(wv)e^{-kv}}{k^2}\right]^\infty_0 -\int_0^\infty \frac{-w^2sin(wv)e^{-kv}}{k^2}dv\right\}
+\end{equation*}
+\begin{equation*}
+    = \left[\frac{sin(wv)e^{-kv}}{-k}\right]^\infty_0 -\left[\frac{wcos(wv)e^{-kv}}{k^2}\right]^\infty_0 - \int_0^\infty \frac{w^2sin(wv)e^{-kv}}{k^2}dv
+\end{equation*}
+\begin{equation*}
+    \int_0^\infty e^{-kv}sin(wv)dv + \int_0^\infty \frac{w^2sin(wv)e^{-kv}}{k^2}dv = \left[\frac{sin(wv)e^{-kv}}{-k}\right]^\infty_0 -\left[\frac{wcos(wv)e^{-kv}}{k^2}\right]^\infty_0 
+\end{equation*}
+\begin{equation*}
+    \left[\frac{k^2 + w^2}{k^2}\right]\int_0^\infty e^{-kv}sin(wv)dv =  \frac{1}{k^2}\left\{\left[-ksin(wv)e^{-kv}\right]^\infty_0 -\left[wcos(wv)e^{-kv}\right]^\infty_0 \right\}
+\end{equation*}
+\begin{equation*}
+    \int_0^\infty e^{-kv}sin(wv)dv = \frac{1}{k^2 + w^2}   \left\{\left[-ksin(wv)e^{-kv}\right]^\infty_0 -\left[wcos(wv)e^{-kv}\right]^\infty_0 \right\} =  \frac{1}{k^2 + w^2}  \left\{(V) - (VI)\right\} 
+\end{equation*}
+
+\begin{equation*}
+    (V) = \lim_{v\rightarrow \infty}-ke^{-kv}sen(wv) - 0 =  0
+\end{equation*}
+
+\begin{equation*}
+    (VI) = \lim_{v\rightarrow \infty}we^{-kv}cos(wv) - w = w 
+\end{equation*}
+
+\begin{equation*}
+    \int_0^\infty e^{-kv}sin(wv)dv = \frac{w}{k^2 + w^2}
+\end{equation*}
+
+\begin{equation*}
+    \therefore B(w) = \frac{w}{\pi(k^2 + w^2)}
+\end{equation*}
+
+Dessa forma a integral de Fourier é dada por:
+\begin{equation*}
+    \boxed{f(x) = \frac{1}{\pi}\int_0^\infty \frac{kcos(wx) + wsin(wx)}{k^2+w^2}dw  } 
+\end{equation*}

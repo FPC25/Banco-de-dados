@@ -1,0 +1,32 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+Utilizando a propriedade da derivação de originais, temos:
+\begin{equation*}
+    f'(t) \xrightarrow{\mathcal{L}} sF(s) - f(0)
+\end{equation*}
+Pelo teorema do valor inicial, temos:
+\begin{equation*}
+    f(0) = \lim_{s->\infty} sF(s) = \lim_{s->\infty} \frac{s^2}{s^3+8} = \lim_{s->\infty} \frac{s^2}{s^3}\frac{1}{1+\frac{8}{s^3}}=\lim_{s->\infty} \frac{1}{s}\frac{1}{1+\cancel{\frac{8}{s^3}}} = 0
+\end{equation*}
+Se $f(0) = 0$ $\therefore$ 
+\begin{equation*}
+    \boxed{f'(t) \xrightarrow{\mathcal{L}}\frac{s^2}{s^3+8}}
+\end{equation*}
+
+\textbf{b)} Determine a imagem de $f''(t)$
+Utilizando a propriedade da derivação de originais, temos:
+\begin{equation*}
+    f''(t) \xrightarrow{\mathcal{L}} s^2F(s) - sf(0) - f(0)
+\end{equation*}
+
+Pelo teorema do valor inicial:
+\begin{equation*}
+    f'(0) = \lim_{s->\infty} [s^2F(s) - sf(0)] = \lim_{s->\infty} \frac{s^3}{s^3+8} = \lim_{s->\infty} \frac{1}{1+\frac{8}{s^3}} = 1 \therefore f'(0) = 1
+\end{equation*}
+Assim, a imagem de $f''(t) $ é: 
+\begin{equation*}
+    \boxed{f''(t) \xrightarrow{\mathcal{L}} \frac{s^3}{s^3 + 8} - 1}
+\end{equation*}

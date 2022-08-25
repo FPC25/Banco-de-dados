@@ -1,0 +1,231 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)} 
+
+O método de separação de variáveis é dado por:
+\begin{equation*}
+    u(x,t) = X(x)\cdot T(t)
+\end{equation*}
+que satisfaz:
+\begin{equation*}
+    \begin{cases}
+        i)\hspace{0.2cm} u_x (0, t) = X'(0)\cdot T(t) = 0\\
+        ii)\hspace{0.2cm} u_x (L, t) = X'(L)\cdot T(t) = 0
+    \end{cases} \forall t \in \Z
+\end{equation*}
+
+de \textit{i)} temos que \begin{equation*}
+    \begin{cases}
+        X'(0) = 0\\
+            ou\\
+        T(t) = 0
+    \end{cases}
+\end{equation*}
+
+e de \textit{ii)} temos que \begin{equation*}
+    \begin{cases}
+        X'(L) = 0\\
+            ou\\
+        T(t) = 0
+    \end{cases}
+\end{equation*}
+
+Em ambos os casos, sendo $T(t) =0 $ teremos solução trivial uma vez que $u(x,0) = X(x)\cdot 0 = 0$ e solução trivial não nos é interessante. Então estudaremos as outras opções que nos dão as condições de contorno:
+\begin{equation*}
+    \begin{cases}
+         X'(0) = 0\\
+         X'(L) = 0
+    \end{cases}
+\end{equation*}
+
+Impondo que:
+\begin{equation*}
+    \begin{cases}
+         u_t = X(x)T'(t)\\
+         u_{tt} = X(x)T''(t)\\
+         u_xx = X''(x)T(t) 
+    \end{cases}
+\end{equation*}
+e substituindo na equação de onda teremos que:
+\begin{equation*}
+     X''(x)T(t) = a^{-2}X(x)T''(t) \longrightarrow \frac{X''(x)}{X(x)} = a^{-2}\frac{T''(t)}{T(t)} = C
+\end{equation*}
+Onde $C$ é uma constante.
+
+Assim, buscaremos resolver a edp com as soluções não triviais:
+\begin{equation*}
+    \frac{X''}{X} = C \longrightarrow X'' - CX = 0
+\end{equation*}
+
+uma EDO linear homogênea de segunda ordem, onde a solução vai diferir do valor que $C$ assume, se $C=0$, $C<0$ ou $C>0$. 
+
+\begin{enumerate}[I]
+    \item) $C = 0$:
+    Se $X''(x) = 0 \rightarrow X'(x) = m$, sendo $m$ uma constante e assim $X(x) = mx+b$ e se aplicarmos as condições de contorno teremos que:
+    \begin{equation*}
+        \begin{cases}
+             X'(0) = 0 = m\\
+             X'(L) = 0 = m
+        \end{cases}
+    \end{equation*}
+    assim, $\boxed{X(x) = b}$, sendo que $b$ é uma constante qualquer que seja x, e então $u(x,t) = bT(t)$.
+    \item) $C > 0$:
+    Para fins de simplicidade chamaremos $C=\lambda^2$ e a solução desta EDO é do tipo $X(x) = e^{px}$. Então:
+    \begin{equation*}
+        e^{px}(p^2-\lambda^2) = 0
+    \end{equation*}
+    como $e^{px} \neq 0$, então $p^2 - \lambda^2 = 0$ é polinômio característico, e $p = \pm \lambda$.
+    
+    Dessa forma a EDO tem solução:
+    \begin{equation*}
+        \begin{cases}
+            X(x) = \alpha e^{\lambda x} + \beta e^{-\lambda x}\\
+            X'(x) = \lambda(\alpha e^{\lambda x} - \beta e^{-\lambda x})
+        \end{cases}
+    \end{equation*}
+    sendo $\alpha, \beta$ constantes. Aplicando as condições de contorno teremos que, quando $x=0$:
+    \begin{equation*}
+        \lambda(\alpha - \beta) = 0
+    \end{equation*}
+    Como $\lambda = \sqrt{C} > 0$, então $\alpha = \beta$. Com $x = L$, teremos:
+    \begin{equation*}
+        \alpha \lambda (e^{\lambda L} - e^{-\lambda L}) = 0 
+    \end{equation*}
+    Novamente teremos que $lambda > 0$, $e^{\lambda L} - e^{-\lambda L} \neq 0$ pois $\lambda, L > 0$, então $\alpha = \beta = 0$. Com isso obtemos que $X(x) \equiv 0$ e portanto temos novamente a solução trivial que não nos interessa.
+    \item) $C < 0$:
+    
+    Para fins de simplicidade tomaremos que $C = -\lambda^2$, sendo $\lambda \in \R^*$. Assim temos o polinômio característico:
+    \begin{equation*}
+        p^2 + \lambda^2 = 0 \longleftrightarrow p \pm i\lambda
+    \end{equation*}
+    Nos utilizando do princípio da sobreposição e conhecimento prévio temos que:
+    \begin{equation*}
+        \begin{cases}
+            X(x) = \alpha\cos(\lambda x) + \beta\sin(\lambda x)\\
+            X'(x) = \lambda(-\alpha\sin(\lambda x) + \beta\cos(\lambda x))
+        \end{cases}
+    \end{equation*}
+    Aplicando as condições de contorno e lembrando que $\lambda \neq 0$:
+    \begin{equation*}
+        \begin{cases}
+            \lambda(\beta \cos(0) - \alpha \sin(0)) = \lambda(\beta 1 - \alpha 0) = \lambda \beta = 0 \rightarrow \beta = 0\\
+            -\lambda \alpha \sin(\lambda L) = 0
+        \end{cases}
+    \end{equation*}
+    
+    Nesse ultimo caso teremos que:
+    \begin{equation*}
+        ou \begin{cases}
+           \alpha = 0 \leftarrow Solução \hspace{0.2cm} trivial\\
+           \sin(\lambda L) = 0 \rightarrow \lambda = \frac{k\pi}{L}, k\in\Z \neq 0 
+        \end{cases}
+    \end{equation*}
+    Descartando todas as soluções triviais, teremos que: 
+    \begin{equation*}
+        \boxed{X(x) = \alpha cos\left(x\frac{k\pi}{L}\right)}
+    \end{equation*}
+    Soluções que satisfazem as condições de contorno.
+\end{enumerate}
+
+Obtivemos duas soluções não triviais de $X(x)$ tanto para $C=0$, quanto para $C < 0$, e então solucionaremos:
+\begin{equation*}
+    \frac{1}{a^2}\frac{T''(t)}{T(t)} = C
+\end{equation*}
+para os $C$s já mencionados.
+
+\begin{enumerate}[I]
+    \item) $C = 0$:
+    Se $T'' = 0 \Longleftrightarrow T(t) = gt + f$, sendo $g, f$ constantes e assim $u(x, t) = b(gt + f) = c_1t + c_2$, constantes arbitrárias do produto entre $b, g$ e $f$.
+    
+    Contudo a solução encontrada para essa condição de $C=0$ não representa uma onda de função periódica e portanto é uma solução fisicamente absurda e a desconsideramos.
+    \item) $C < 0$:
+    
+    novamente tomamos $C = -\lambda^2$ e sabemos que $\lambda = \frac{k\pi}{L}$:
+    \begin{equation*}
+        T'' + (a\lambda)^2T = 0
+    \end{equation*}
+    Sabemos que a solução dessa EDO é do tipo $T(t) = e^{pt}$ e seu polinômio característico é:
+    \begin{equation*}
+        p^2 + (a\lambda)^2 = 0 \longrightarrow p \pm i\frac{ak\pi}{L}
+    \end{equation*}
+    Com conhecimento prévio e pelo princípio da superposição temos que a solução geral da EDO é:
+    \begin{equation*}
+        T(t) = Acos\left(\frac{ak\pi t}{L} + Bsin(\frac{ak\pi t}{L}\right)
+    \end{equation*}
+    Com $A,B\in\R$
+    
+    E dessa forma a solução da EDP é dada por:
+    \begin{equation*}
+        u(x, t) = \alpha cos\left(\frac{k\pi x}{L}\right)\left(Acos\left(\frac{ak\pi t}{L}\right) + Bsin\left(\frac{ak\pi t}{L}\right)\right)
+    \end{equation*}
+\end{enumerate}
+
+Como vimos a única solução viável e que fisicamente faz sentido é quando $C<0$, mas podemos considerar $\omega = \frac{\pi}{L}$, $p = A\alpha$ e $q = B\alpha$, teremos o conjunto de soluções particulares:
+\begin{equation*}
+    u_k(x, t) = cos(k\w x)[pcos(a\w kt) + qsin(ak\w t)]
+\end{equation*}
+
+e quando aplicamos o princípio da superposição:
+
+\begin{equation*}
+    u(x, t) = \sum_{k=1}^\infty cos(k\w x)[p_kcos(a\w kt) + q_ksin(ak\w t)]
+\end{equation*}
+com $k\neq0\in\Z$  e $p_k < q_k$. 
+
+\vspace{1cm}
+\textbf{b)}
+
+A função é periódica se $\exists P>0$ tal que $u(x, t) = u(x, t+P)$. Aplicando isso teremos que:
+\begin{equation*}
+    u(x, t+P) = cos(k\w x)[p_kcos(a\w k(t+P))+q_ksin(a\w k(t+P))]
+\end{equation*}
+chamemos $n=ak\w$ para fins de simplicidade:
+\begin{equation*}
+    = cos(kx\w)[p_k(cos(nt)cos(nP)-sin(nt)sin(nP)) + q_k(sin(nt)cos(nP) + sin(nP)cos(nt))]
+\end{equation*}
+\begin{equation*}
+    = cos(kx\w)[cos(nP)(p_kcos(nt) + q_ksen(nt)) + sin(nP)(q_kcos(nt) - p_ksin(nt))]
+\end{equation*}
+
+Abrindo $n$ e igualarmos isso a frequência angular teremos que:
+\begin{equation*}
+    n =  \frac{ka\pi}{L} = \frac{2\pi}{P} \longrightarrow \boxed{P=\frac{2L}{ka}}
+\end{equation*}
+
+e então substituirmos isso na equação achada para $u(x, t+P)$:
+\begin{equation*}
+    u(x, t+P) = cos(k\w x)\left\{cos\left(\frac{\cancel{ak}\pi}{\cancel{L}}\frac{2\cancel{L}}{\cancel{ka}}\right)[p_kcos(nt)+q_ksin(nt)] + sin\left(\frac{\cancel{ak}\pi}{\cancel{L}}\frac{2\cancel{L}}{\cancel{ka}}\right)[q_kcos(nt) - p_ksin(nt)] \right\}
+\end{equation*}
+\begin{equation*}
+    u(x, t+P) = cos(kx\w)[cos(2\pi)(p_kcos(nt) + q_ksen(nt)) + sin(2\pi)(q_kcos(nt) - p_ksin(nt))]
+\end{equation*}
+Sabendo que:
+\begin{equation*}
+    \begin{cases}
+        cos(2\pi) = 1\\
+        sin(2\pi) = 0
+    \end{cases}    
+\end{equation*}
+obtemos que:
+\begin{equation*}
+    \boxed{u(x, t+P) = cos(kx\w)[p_kcos(nt) + q_ksen(nt)] = u(x, t)}
+\end{equation*}
+$\therefore u(x, t)$ é uma função periódica no tempo. 
+
+Além disso, teremos que o maior período desta fução acontece quando $k=1$, pois:
+\begin{equation*}
+    P(k=1) = \frac{2L}{a}, \hspace{0.2cm} k\in\Z^*
+\end{equation*}
+
+\textbf{c)}
+
+Com $L=50m$, $k=1$, $g=9,8ms^{-2}$ e $h=2m$:
+\begin{equation*}
+    a = \sqrt{hg} = \sqrt{2\cdot 9,8} = \sqrt{19,6}
+\end{equation*}
+Como $P$ tem que ser um valor positivo e $L$ é um valor positivo, então obrigatoriamente $a$ também deve ser um valor positivo. Dessa forma:
+\begin{equation*}
+    P = \frac{2L}{a} = \frac{100}{\sqrt{19,6}} \approx 22,6s
+\end{equation*}

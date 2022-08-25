@@ -1,0 +1,195 @@
+\linespread{1.5}
+\textbf{Solução}
+
+\textbf{a)} Para evitar confusão na solução abaixo, chamaremos $w=q=0.5, 1.5, 5, 10$
+
+A E.D.O $\frac{d²y}{dt²} + w^2y = f(t)$ é uma equação linear com coeficientes constantes de 2ª ordem não homogênea. Portanto, possui uma solução da seguinte forma:
+\begin{equation*}
+    y(t) = u(t) + v(t)
+\end{equation*}
+onde $u(t)$ é solução geral da equação homogênea. Se $f(t)$ satisfaz as condições de Dirichlet no intervalo de interesse, então a solução da equação não homogênea pode ser obtida na forma de seu desenvolvimento em série de Fourier. Seja, portanto, o desenvolvimento de $f(t)$ em série de Fourier na forma complexa:
+\begin{equation}
+    \label{eq:Fouriercomplexa}
+    f(x) = \sum^{+\infty}_{k=-\infty} c_k e^{ikwx}
+\end{equation}
+\begin{equation}
+    \label{eq:ckFouerier}
+    c_k = \frac{1}{T} \int^T_0 f(x)e^{-ikwx}dx
+\end{equation}
+
+Seja, também, o desenvolvimento de $v(t)$ em série de Fourier dado por:
+\begin{equation*}
+    v(t) = \sum^\infty_{-\infty} r_k e^{ikwt}
+\end{equation*}
+Assim, $r_k$ vai depender de k portanto é considerado constante quando derivado em relação a $t$:
+\begin{equation*}
+    \dot{v}(t) = \sum^\infty_{-\infty} r_k e^{ikwt}ikw
+\end{equation*}
+\begin{equation*}
+    \ddot{v}(t) = \sum^\infty_{-\infty} r_k e^{ikwt}(ikw)^2
+\end{equation*}
+Como v(t) é solução particular da não-homogênea, então:
+\begin{equation}
+    sum^\infty_{-\infty} r_k e^{ikwt}(ikw)^2 + q^2\sum^\infty_{-\infty} r_k e^{ikwt} = \sum^{+\infty}_{k=-\infty} c_k e^{ikwx}
+\end{equation}
+Agrupando os somatórios temos:
+\begin{equation*}
+    \sum^{+\infty}_{k=-\infty} r_k e^{ikwt}[q^2 - (kw)^2] = \sum^{+\infty}_{k=-\infty} c_k e^{ikwx}
+\end{equation*}
+Assim:
+\begin{equation*}
+    r_k[q^2 - (kw)^2] = c_k \Rightarrow r_k = \frac{c_k}{q^2 - (kw)^2} = 
+\end{equation*}
+
+No caso da função $cos(t)$, $k=1$, então:
+\begin{equation*}
+    v(t) = \sum^{+\infty}_{k=-\infty} \frac{c_k}{q^2 - 1}e^{ikwt}
+\end{equation*}
+Porém:
+\begin{equation*}
+    cos(t) = \sum^{+\infty}_{k=-\infty} \frac{c_k}e^{ikwt} \Rightarrow v(t) = y_{PNH}= \frac{cos(t)}{q^2-1}
+\end{equation*}
+Substituindo agora os valores de q:
+\begin{equation*}
+    \rightarrow{} q=0.5 \Rightarrow v(t) = \frac{cos(t)}{(1/2)^2 - 1} = -\frac{4}{3}cos(t)  
+\end{equation*}
+\begin{equation*}
+    \rightarrow{} q = 1.5 \Rightarrow v(t) = \frac{cos(t)}{(3/2)^2 - 1 } = \frac{4}{5}cos(t)  
+\end{equation*}
+\begin{equation*}
+    \rightarrow{} q=5 \Rightarrow v(t) = \frac{cos(t)}{(5)^2 - 1} = \frac{cos(t)}{24}  
+\end{equation*}
+\begin{equation*}
+    \rightarrow{} q=10 \Rightarrow v(t) = \frac{cos(t)}{(10)^2 - 1} = \frac{cos(t)}{99}  
+\end{equation*}
+
+A solução da equação homogênea associada é dada por:
+\begin{equation*}
+    y_H(t) = Ce^{pt},\hspace{0.5cm}\dot{y_H}(t) = Cpe^{pt},\hspace{0.5cm} \ddot{y_H}(t) = Cp^2e^{pt}
+\end{equation*}
+\begin{equation*}
+    Cp^2e^{pt} + q^2Ce^{pt} = 0 = Ce^{pt}(p^2+ q^2) = 0
+\end{equation*}
+Temos como solução trivial $\boxed{C=0}$, uma vez que $e^{pq}\neq0$. Também temos que:
+\begin{equation*}
+    p^2+q^2 = 0 \Rightarrow p_1=qi \hspace{0.3cm}ou \hspace{0.3cm} p_2=-qi
+\end{equation*}
+Pelo princípio da superposição:
+\begin{equation*}
+    y_H(t) = y_1(t) + y_2(t) = C_1e^{iqt} + C_2e^{-iqt}
+\end{equation*}
+
+Tendo que:
+\begin{equation*}
+    e^{qt} = cos(qt) + i\sin(qt)
+\end{equation*}
+\begin{equation*}
+    e^{-qt} = cos(qt) - i\sin(qt)
+\end{equation*}
+E se considerearmos $C_1 = C_2$, temos que:
+\begin{equation*}
+    y_{1p} = C_1(cos(qt) + i\sin(qt)) + C_1(cos(qt) - i\sin(qt)) = 2C_1cos(qt) = Ccos(qt)
+\end{equation*}
+onde $C\inC$.
+Se considerarmos $C_1 = -C_2$, então:
+\begin{equation*}
+    y_{2p} = C_1(cos(qt) + i\sin(qt)) - C_1(cos(qt) - i\sin(qt)) = 2iC_1sin(qt) = Dsin(qt)
+\end{equation*}
+
+A soma de duas soluções particulares da homogênea fornece a solução geral da homogênea, de acordo com o princípio da superposição. Portanto:
+\begin{equation*}
+    y_H = y_{1p} + y_{2p} = Ccos(qt) + Dsin(qt)
+\end{equation*}
+Cmo a solução geral da não-homogênea é dada pela soma da solução geral da homogênea com a solução particular da não-homogênea, então:
+\begin{equation*}
+    \boxed{y_{NH} = y_H + y_{PNH} = Ccos(qt) + Dsin(qt) + \frac{cos(t)}{q^2-1}}
+\end{equation*}
+
+agora basta substituir os valores de q para obter cada solução do exercício.
+
+\textbf{b)} De acordo com o item anterior, sabemos que que a solução geral da Homogênea é dada por:
+\begin{equation*}
+    y_H = Acos(qt) + Bsin(qt)
+\end{equation*}
+Assim, precisamos somente encontrar a solução particular da não homogênea. Cujo o desenvolvimento da $v(t) = y_{PHN}$ em série de Fourier é dado por:
+\begin{equation*}
+    v(t) = \sum^\infty_{-\infty} r_k e^{ikwt}
+\end{equation*}
+
+Do item anterior sabemos também que $f(t)$ satisfaz as condições de Dirichlet no intervalo de interesse, então seu desenvolvimento em série de Fouerier é dado pela mesma na forma complexa. Vimos também que:
+\begin{equation*}
+    r_k = \frac{c_k}{q^2 - (kw)^2}
+\end{equation*}
+E como $T=2\pi$, então $kw=1$. Como consequência:
+\begin{equation*}
+    r_k = \frac{c_k}{q^2 - 1}
+\end{equation*}
+Nos restando agora determinar os valores de $c_k$, para $f(t)$:
+\begin{equation*}
+    c_k = \frac{1}{2\pi}\int^\pi_{-\pi} f(t)e^{-ikwt}dt =  \frac{1}{2\pi}\left[\int^0_{-\pi} (t+\pi)e^{-ikwt}dt + \int^\pi_0 (-t+\pi)e^{-ikwt}dt \right]= \frac{1}{2\pi}[(I) + (II)]
+\end{equation*}
+
+\begin{equation*}
+    (I) = \int_{-\pi}^0 te^{-ikwt}dt + \int_{-\pi}^0 \pie^{-ikwt}dt = \left[\frac{te^{-ikwt}}{-ikw}\right]_{-\pi}^0 - \int_{-\pi}^0 \frac{e^{-ikwt}}{-ikw}dt+ \left[\frac{\pi e^{-ikwt}}{-ikw}\right]_{-\pi}^0
+\end{equation*}
+\begin{equation*}
+    = \left[\frac{te^{-ikwt}}{-ikw}\right]_{-\pi}^0 - \left[\frac{e^{-ikwt}}{(-ikw)^2}\right]_{-\pi}^0 + \left[\frac{\pi e^{-ikwt}}{-ikw}\right]_{-\pi}^0 = \frac{\pi e^{ikw\pi}}{-ikw} - \left[\frac{-1}{(kw)^2} + \frac{e^{ikw\pi}}{(kw)^2}\right]+\left[\frac{-\pi}{ikw} + \frac{\pi e^{ikw\pi}}{ikw}\right]
+\end{equation*}
+Como $w=1$:
+\begin{equation*}
+    =\frac{-\pi e^{ik\pi}}{ik} + \frac{1}{k^2} - \frac{e^{ik\pi}}{k^2} - \frac{\pi}{ik} + \frac{\pi e^{ik\pi}}{ik}
+\end{equation*}
+também temos que $e^{ik\pi} = cos(k\pi) = (-1)^k$, e cancelando o primeiro e ultimo termo:
+\begin{equation*}
+    (I) = \frac{1-(-1)^k}{k^2} - \frac{\pi}{ik}
+\end{equation*}
+
+Agora resolvemos $(II)$, já substituindo $w=1$:
+\begin{equation*}
+    (II) = \int^\pi_0 -te^{-ikt}dt + \int^\pi_0 \pi e^{-ikt}dt = \left[\frac{-te^{-ikt}}{-ik}\right]^\pi_0 - \int^\pi_0 \frac{-e^{-ikt}}{-ik}dt + \left[\frac{\pi e^{-ikt}}{-ik}\right]^\pi_0
+\end{equation*}
+\begin{equation*}
+    = \left[\frac{-te^{-ikt}}{-ik}\right]^\pi_0 - \left[\frac{-e^{-ikt}}{(-ik)^2} \right]^\pi_0 + \left[\frac{\pi e^{-ikt}}{-ik}\right]^\pi_0 =  \left[\frac{-\pi e^{-ik\pi}}{-ik}\right] - \left[\frac{-e^{-ik\pi}}{(-ik)^2} - \frac{(-1)}{(-ik)^2}\right] + \left[\frac{\pi e^{-ik\pi}}{(-ik)} - \frac{\pi}{(-ik)}\right]
+\end{equation*}
+Novamente sabemos que $e^{-ik\pi} = cos(k\pi) = (-1)^k$:
+\begin{equation*}
+    =\frac{\pi(-1)^k}{ik} + \frac{(-1)^k}{k^2} -\frac{1}{k^2}  + \frac{\pi}{ik} - \frac{\pi(-1)^k}{ik}
+\end{equation*}
+cancelando o primeiro e último termo, temos que:
+\begin{equation*}
+    (II) = \frac{1 - (-1)^k}{k^2} + \frac{\pi}{ik}
+\end{equation*}
+Substituindo $(I)$ e $(II)$:
+\begin{equation*}
+    c_k = \frac{1}{2\pi}\left[\frac{1-(-1)^k}{k^2} - \frac{\pi}{ik} +\frac{1 - (-1)^k}{k^2} + \frac{\pi}{ik}\right] = \frac{2}{2\pi}\left(\frac{1-(-1)^k}{k^2} \right) = \frac{1-(-1)^k}{\pi k^2}
+\end{equation*}
+Quando $k$ é par $c_k = 0$, enquanto para $k$ é impar isso não acontece:
+\begin{equation*}
+    c_k = \frac{2}{\pi(2k-1)^2}
+\end{equation*}
+
+Há também o problema no ponto $k=0$:
+\begin{equation*}
+    c_0 =  \frac{1}{2\pi}\left[\int^0_{-\pi} (t+\pi)e^{-i0wt}dt + \int^\pi_0 (-t+\pi)e^{-i0wt}dt \right]= \frac{1}{2\pi}[(III) + (IV)]
+\end{equation*}
+
+\begin{equation*}
+    (III) = \int^0_{-\pi} (t+\pi)e^{-i0wt}dt = \int^0_{-\pi} (t+\pi)dt = \left[\frac{t^2}{2} + \pi t\right]^0_{-\pi} = 0 - \left[\frac{\pi^2}{2}- \pi^2\right] =\frac{\pi^2}{2}
+\end{equation*}
+\begin{equation*}
+    (IV) = \int^\pi_0 (-t+\pi)e^{-i0wt}dt = \int_0^{\pi} (-t+\pi)dt = \left[\frac{-t^2}{2} + \pi t\right]_0^\pi = \left[\frac{-\pi^2}{2}+ \pi^2\right] - 0 =\frac{\pi^2}{2}
+\end{equation*}
+Substituindo, temos que:
+\begin{equation*}
+    c_0 = \frac{1}{2\pi}\left(\frac{\pi^2}{2} + \frac{\pi^2}{2} \right) = \frac{\pi}{2}
+\end{equation*}
+
+Assim:
+\begin{equation}
+    v(t) = \frac{\pi}{2} + \sum^\infty_{k = -\infty} \frac{2}{\pi(2k-1)^2}\frac{e^{it(2k-1)}}{q^2-1} 
+\end{equation}
+
+Portanto, a solução geral da E.D.O. não-homogênea será:
+\begin{equation*}
+    \bexed{y_{NH} = Acos(qt) + Bsin(qt) + \frac{\pi}{2} + \sum^\infty_{k = -\infty} \frac{2}{\pi(2k-1)^2}\frac{e^{it(2k-1)}}{q^2-1}}
+\end{equation*}

@@ -1,0 +1,177 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+\begin{equation*}
+    F(s) = \frac{3}{s^4} - \frac{1}{s^2} = \frac{1}{2}\frac{6}{s^4} - \frac{1}{s^2} \xrightarrow{\mathcal{L}^{-1}} \frac{t^3}{2} - t
+\end{equation*}
+
+\textbf{b)}
+\begin{equation*}
+    F(s) = \frac{s}{(s-4)^2+4} + \frac{3}{(s-4)^2+4} = \frac{s}{(s-4)^2+4} - \frac{4}{(s-4)^2+4} + \frac{4}{(s-4)^2+4} + \frac{3}{2}\frac{2}{(s-4)^2+4}
+\end{equation*}
+\begin{equation*}
+    = \frac{s-4}{(s-4)^2+4} + 2\frac{2}{(s-4)^2+4} + \frac{3}{2}\frac{2}{(s-4)^2+4}
+\end{equation*}
+\begin{equation*}
+    F(s) = \frac{s-4}{(s-4)^2+4} + 2\frac{2}{(s-4)^2+4} + \frac{3}{2}\frac{2}{(s-4)^2+4} \xrightarrow{\mathcal{L}} f(t) = e^{4t}cos(2t) + \left(\frac{4}{2}+ \frac{3}{2}\right)e^{4t}sen(2t) 
+\end{equation*}
+\begin{equation*}
+    \boxed{f(t) = e^{4t}cos(2t) + \frac{7}{2}e^{4t}sen(2t) }
+\end{equation*}
+
+\textbf{c)}
+Aqui, podemos calcular a transformada inversa de Laplace da forma:
+\begin{equation*}
+    f(t) = \frac{1}{2i\pi}\int^{\gamma +i\infty}_{\gamma - i\infty} F(s)e^{st}ds = \sum^n_k=1 Res[F(s)e^{st}, s_k] \longrightarrow 
+\end{equation*}
+\begin{equation*}
+    Res[F(s)e^{st}, (s-3)] = \lim_{s->3} \frac{\cancel{(s-3)}((s-2)}{\cancel{(s-3)}{(s-4)}}e^{st} = -e^{3t}
+\end{equation*}
+\begin{equation*}
+    Res[F(s)e^{st}, (s-4)] = \lim_{s->4} \frac{\cancel{(s-4)}((s-2)}{\cancel{(s-4)}{(s-3)}}e^{st} = 2e^{4t}
+\end{equation*}
+\begin{equation*}
+    \boxed{f(t) = 2e^{4t} - e^{3t}}
+\end{equation*}
+
+\textbf{d)}
+
+\begin{equation*}
+    F(s) = \frac{e^{3s} -1}{se^{3s}} = \frac{1}{s} - \frac{1}{se^{3s}}
+\end{equation*}
+assim temos:
+\begin{equation*}
+    \begin{cases}
+    \frac{1}{s} \xrightarrow{\mathcal{L}^{-1}} h(t)\\
+    \frac{e^{-3s}}{s}\xrightarrow{\mathcal{L}^{-1}} h(t-3)
+    \end{cases} \therefore \boxed{f(t) = h(t) - h(t-3)}
+\end{equation*}
+
+\textbf{e)}
+\begin{equation*}
+    F(s) = \frac{se^{-3s}}{(s-3)(s-4)}
+\end{equation*}
+
+então:
+\begin{equation*}
+    f(t) = \frac{1}{2i\pi}\int_{\gamma - i\infty}^{\gamma + i\infty} F(s)e^{st}dt = \sum_{k=1}^nRes[F(s)e^{st}; sk]
+\end{equation*}
+Tendo polos simples em $s=3$ e $s=4$, podemos fazer:
+\begin{equation*}
+    Res[F(s)e^{st}, (s-3)] = \lim_{s->3} \frac{\cancel{(s-3)}se^{(t-3)s}}{\cancel{(s-3)}(s-4)} = -3e^{3t-9}
+\end{equation*}
+\begin{equation*}
+    Res[F(s)e^{st}, (s-4)] = \lim_{s->4} \frac{\cancel{(s-4)}se^{(t-3)s}}{\cancel{(s-4)}(s-3)} = 4e^{4t-12}
+\end{equation*}
+
+Então:
+\begin{equation*}
+    \boxed{f(t) = 4e^{4t-12}-3e^{3t-9}}
+\end{equation*}
+
+\textbf{f)}
+\begin{equation*}
+    F(s) = \frac{-6}{(s-3)^3}
+\end{equation*}
+Utilizando da propriedade da derivação do original em relação a um parâmetro, temos:
+\begin{equation*}
+    t^ne^{at} \xrightarrow{\mathcal{L}} \frac{n!}{(s-a)^{n+1}}
+\end{equation*}
+então:
+\begin{equation*}
+    \frac{-6}{2!}\frac{2!}{(s-3)^3}\xrightarrow{\mathcal{L}^{-1}}t^2e^{-3t}\frac{-6}{2} \Rightarrow \boxed{f(t) = -3t^2e^{-3t}}
+\end{equation*}
+
+\textbf{g)}
+
+\begin{equation*}
+    F(s) = \frac{5s+1}{s^2-25} = \frac{5s+1}{(s+5)(s-5)}
+\end{equation*}
+Por Resíduos temos:
+\begin{equation*}
+    Res[F(s)e^{st}, (s+5)] = \lim_{s->-5} \frac{\cancel{(s+5)}(5s+1)e^{ts}}{\cancel{(s+5)}(s-5)} = \frac{-24e^{-5t}}{-10} = \frac{24}{10}e^{-5t}
+\end{equation*}
+
+\begin{equation*}
+    Res[F(s)e^{st}, (s-5)] = \lim_{s->5} \frac{\cancel{(s-5)}(5s+1)e^{ts}}{\cancel{(s-5)}(s+5)} = \frac{26}{10}e^{5t}
+\end{equation*}
+
+Dessa forma, temos que:
+\begin{equation*}
+    \boxed{f(t) = \frac{1}{5}\left(12e^{-5t}+13e^{5t}\right)}
+\end{equation*}
+
+\textbf{h)}
+\begin{equation*}
+    F(s) = \frac{1}{(s+\sqrt{2})(s-\sqrt{3})}
+\end{equation*}
+
+Novamente por polos teremos que
+\begin{equation*}
+    Res[F(s)e^{st}, (s+\sqrt{2})] = \lim_{s->-\sqrt{2}} \frac{\cancel{(s+\sqrt{2})}e^{ts}}{\cancel{(s+\sqrt{2})}(s-\sqrt{3})} = \frac{-e^{-t\sqrt{2}}}{\sqrt{2}+\sqrt{3}}
+\end{equation*}
+\begin{equation*}
+    Res[F(s)e^{st}, (s-\sqrt{3})] = \lim_{s->\sqrt{3}} \frac{\cancel{(s-\sqrt{3})}e^{ts}}{\cancel{(s-\sqrt{3})}(s+\sqrt{2})} = \frac{e^{t\sqrt{3}}}{\sqrt{2}+\sqrt{3}} 
+\end{equation*}
+
+\begin{equation*}
+    \boxed{f(t) = \frac{e^{t\sqrt{3}}-e^{-t\sqrt{2}}}{\sqrt{2}+\sqrt{3}}}
+\end{equation*}
+
+\textbf{i)}
+
+\begin{equation*}
+    F(s) = \frac{1}{(s+a)(s+b)}
+\end{equation*}
+
+Por resíduos temos que:
+\begin{equation*}
+    Res[F(s)e^{st}; s+a] = \lim_{s->-a}\frac{\cancel{(s+a)}e^{st}}{\cancel{(s+a)}(s+b)} = \frac{e^{-at}}{b-a}
+\end{equation*}
+
+\begin{equation*}
+    Res[F(s)e^{st}; s+b] = \lim_{s->-b}\frac{\cancel{(s+b)}e^{st}}{\cancel{(s+b)}(s+a)} = \frac{e^{-bt}}{a-b}
+\end{equation*}
+
+Então:
+\begin{equation*}
+    \boxed{f(t) = \frac{e^{-bt} - e^{-at}}{a-b}}
+\end{equation*}
+
+\textbf{j)}
+\begin{equation*}
+    F(s) = \frac{1}{s^2-4s+5} = \frac{1}{(s-2)^2+1}
+\end{equation*}
+Nos usando da propriedade do deslocamento de origem da imagem
+\begin{equation*}
+    e^{at}f(t) \xrightarrow{\mathcal{L}}F(s-a) \therefore \mathcal{L}^{-1}\{F(s-a)\} = e^{at}f(t)
+\end{equation*}
+
+dessa forma:
+\begin{equation*}
+    \mathcal{L}^{-1}\left\{\frac{1}{(s-2)^2 + 1}\right\} = e^{2t}\mathcal{L}^{-1}\left\{\frac{1}{s^2 +1 }\right\} \Rightarrow \boxed{f(t) = e^{2t}sin(t)}
+\end{equation*}
+
+\textbf{k)}
+
+\begin{equation*}
+    F(s) = atan\left(\frac{1}{s}\right)
+\end{equation*}
+
+Utilizando a propriedade da derivação de Imagens, temos:
+\begin{equation*}
+    \frac{dF(s)}{ds} \xrightarrow{\mathcal{L}^{-1}} -tf(t)    
+\end{equation*}
+dessa forma 
+
+\begin{equation*}
+    \frac{dF(s)}{ds} = \frac{d}{ds}(atan\left(\frac{1}{s}\right) = \frac{1}{1+\left(\frac{1}{s}\right)^2}\frac{1}{s} = -\frac{\cancel{s^2}}{s^2+1}\frac{1}{\cancel{s^2}} = \frac{-1}{s^2+1}
+\end{equation*}
+Assim
+\begin{equation*}
+    \frac{-1}{s^2+1} \xrightarrow{\mathcal{L}^{-1}} -sint = -tf(t) \Rightarrow \boxed{f(t) = \frac{sin(t)}{t}}
+\end{equation*}
+

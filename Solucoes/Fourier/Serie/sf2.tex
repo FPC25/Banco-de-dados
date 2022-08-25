@@ -1,0 +1,56 @@
+\linespread{1.5}
+\textbf{Solução}
+
+A série de Fourier de \textit{f(t)} pode ser escrita da seguinte forma:
+\begin{equation}
+    \label{eq:Fourierserie}
+    f(t) = a_0 + \sum_{k=1}^\infty a_k\cos{(kwt)} + b_k\sin{(kwt)}
+\end{equation}
+onde os coeficientes de Fourier são dados por:
+\begin{equation}
+    a_0 = \frac{1}{T}\int_{-T/2}^{T/2}f(t)dt
+\end{equation}
+\begin{equation}
+    a_k = \frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos{(kwt)}dt
+\end{equation}
+\begin{equation}
+    b_k = \frac{2}{T}\int_{-T/2}^{T/2}f(t)\sin{(kwt)}dt
+\end{equation}
+sendo $w = 2\pi / T$ e $T$ o período fundamental da função.
+
+Sabendo que a função $f(t)=t$ é ímpar, então tempos que $a_0 = a_k = 0$, logo só temos que calcular o termo $b_k$:
+\begin{equation*}
+    b_k = \frac{2}{T}\int_{-T/2}^{T/2}t\sin{kwt}dt
+\end{equation*}
+Que deve ser calculada utilizando o método de separação por partes. Assim:
+\begin{equation*}
+    b_k = \frac{2}{T}\int_{-T/2}^{T/2}t\sin{(kwt)}dt = \frac{2}{T}\left\{-\frac{t\cos{(kwt)}}{kw}|^{T/2}_{-T/2} - \int_{-T/2}^{T/2}\frac{-\cos{(kwt)}}{kw}dt\right\}
+\end{equation*}
+\begin{equation*}
+    b_k = \frac{2}{T}\left\{\left[\left(\frac{-T}{2kw}\cos{\left(\frac{kwT}{2}\right)}\right) - \left(\frac{T}{2kw}\cos{\left(\frac{-kwT}{2}\right)}\right)\right] - \left[\frac{-\sin{(kwt)}}{(kw)^2}\right]_{-T/2}^{T/2}\right\}
+\end{equation*}
+\begin{equation*}
+    b_k = \frac{2}{T}\left\{\left(\frac{-T}{kw}\cos{\left(\frac{kwT}{2}\right)}\right) - \left[-\frac{1}{(kw)^2}\sin{\left(\frac{kwT}{2}\right)}-\left(-\frac{1}{(kw)^2}\sin{\left(-\frac{kwT}{2}\right)}\right)\right]\right\}
+\end{equation*}
+\begin{equation*}
+    b_k = \frac{2}{T}\left\{-\frac{T}{kw}\cos{\left(\frac{kwT}{2}\right)} + \frac{2}{(kw)^2}\sin{\left(\frac{kwT}{2}\right)}\right\}
+\end{equation*}
+Como $T = \frac{2\pi}{w}$, temos que:
+\begin{equation*}
+    b_k = \frac{2w}{2\pi}\left\{\frac{2\pi}{kw^2}\cos{\left(\frac{kw2\pi}{2w}\right)} + \frac{2}{(kw)^2}\sin{\left(\frac{kw2\pi}{2w}\right)}\right\}
+\end{equation*}
+\begin{equation*}
+    b_k = \frac{w}{\pi}\left\{\frac{-2\pi}{kw^2}\cos{(k\pi)} + \frac{2}{(kw)^2}\sin{(k\pi)}\right\}
+\end{equation*}
+\begin{equation*}
+    b_k = \frac{-2}{kw}\cos{(k\pi)} + \frac{2}{k^2\pi w}\sin{(k\pi)}
+\end{equation*}
+No entanto, como $k\in\N$ e $k\geq1$, o termo $\sin{(k\pi) = 0 \hspace{0.2cm}\forall \hspace{0.2cm} k}$. Além disso, temos que $\cos{(k\pi)} = (-1)^k \hspace{0.2cm} \forall \hspace{0.2cm} k \in \N$ e $k\geq1$ Logo:
+\begin{equation}
+    \label{eq:bk1}
+    b_k = \frac{-2}{kw}(-1)^k
+\end{equation}
+Assim, temos os coeficientes de Fourier calculados, e então substituindo \ref{eq:bk1} em \ref{eq:Fourierserie}, obtemos que \textit{f(t)} é dado por:
+\begin{equation*}
+    \boxed{f(t) = -2\sum_{k=1}^{\infty} \frac{(-1)^k}{kw}\sin{(kwt)}}
+\end{equation*}

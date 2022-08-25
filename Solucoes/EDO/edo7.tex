@@ -1,0 +1,134 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)} Dada a EDO $y'+2sin(2\pi x)=0$ e sabendo que sua solução é por integração, teremos que esta é separável então:
+\begin{equation*}
+    \frac{dy}{dx} = -2sin(2\pi x)
+\end{equation*}
+\begin{equation*}
+    \int dy = -2\int sin(2\pi x) dx 
+\end{equation*}
+\begin{equation*}
+    y + c_1 = -\cancel{2}\left(\frac{-cos(2\pi x)}{\cancel{2}\pi}\right) + c_2
+\end{equation*}
+tendo $C = c_2-c_1$
+\begin{equation*}
+    \boxed{y = \frac{cos(2x\pi)}{\pi} + C}
+\end{equation*}
+
+\textbf{b)}
+Dada a EDO $y'+xe^a = 0$, onde $a=\frac{-x^2}{2}$, e sabendo que sua solução é por integração, teremos que esta é separável então:
+\begin{equation*}
+    \frac{dy}{dx} = -xe^a 
+\end{equation*}
+\begin{equation*}
+    \int dy = \int -xe^a dx
+\end{equation*}
+Sabendo que $a = \frac{-x^2}{2}$, resolvemos a integral do termo da esquerda por substituição, onde
+\begin{equation*}
+    \begin{cases}
+    u = a = \frac{-x^2}{2}\\
+    du = -x dx
+    \end{cases}
+\end{equation*}
+Assim
+\begin{equation*}
+    y + c_1 = \int e^u du = e^u + c_2
+\end{equation*}
+Sabendo que $C = c_2-c_1$ e substituindo $u = \frac{-x^2}{2}$, então:
+\begin{equation*}
+    \boxed{y = e^{-\frac{x^2}{2}} + C}
+\end{equation*}
+
+\textbf{c)} Dada a EDO $y' = y$ e sabendo que sua solução é por integração, teremos que esta é separável então:
+\begin{equation*}
+    \frac{dy}{dx} = y
+\end{equation*}
+Assim:
+\begin{equation*}
+    \int \frac{1}{y}dy = \int dx
+\end{equation*}
+\begin{equation*}
+    ln(y) + c_1 = x + c_2
+\end{equation*}
+Sabendo que $C = c_2-c_1$, teremos:
+\begin{equation*}
+    ln(y) = x + C
+\end{equation*}
+aplicando a propriedade de logaritmo que $e^{ln(x)} = x$, e tirando o exponencial de ambos os lados, teremos que:
+\begin{equation*}
+    y = e^{x}e^C
+\end{equation*}
+sendo $e^C=D$ uma constante qualquer:
+\begin{equation*}
+    \boxed{y = De^x}
+\end{equation*}
+
+\textbf{d)} Dada a EDO $y' = 4e^{-x}cos(x)$ e sabendo que sua solução é por integração, teremos que esta é separável então:
+\begin{equation*}
+    \int dy = 4\int e^{-x}cos(x)
+\end{equation*}
+A integral da esquerda pode ser resolvida por partes, mas por experiencia sabemos que tal procedimento se repetiria varias vezes, então usaremos a abordagem que transformamos:
+\begin{equation*}
+    cos(x) = \frac{e^{ix} + e^{-ix}}{2}
+\end{equation*}
+\begin{equation*}
+    y + c_1= 2\left[\int e^{(i-1)x}dx + \int e^-(i+1)x dx \right]
+\end{equation*}
+por questões de praticidade chamemos:
+\begin{equation*}
+    \begin{cases}
+    a = (i-1)\\
+    b = (i+1)
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    y = 2\left[\frac{e^{ax}}{a} - \frac{e^{-bx}}{b}\right] + c_2 - c_1
+\end{equation*}
+tomemos $c_2 - c_1 = C$, constantes arbitrárias:
+\begin{equation*}
+    y = 2\left[\frac{be^{ax} - be^{-bx}}{ab}\right] + C    
+\end{equation*}
+e temos que:
+\begin{equation*}
+    ab = (i-1)(1+i) = i + i^2 -1 - i = -1 -1 = -2 
+\end{equation*}
+\begin{equation*}
+    y = -2e^{-x}\left[\frac{(1+i)e^{ix}-(i-1)e^{-ix}}{2}\right] + C = -2e^{-x}\left[\left(\frac{e^{ix}+e^{-ix}}{2}\right) - \left(\frac{e^{ix}-e^{-ix}}{2i}\right)\right]+C
+\end{equation*}
+Agora, nós sabemos que:
+\begin{equation*}
+    \begin{cases}
+        cos(x) = \frac{e^{ix} + e^{-ix}}{2}\\
+        sin(x) = \frac{e^{ix} - e^{-ix}}{2i}
+    \end{cases}
+\end{equation*}
+e então substituirmos:
+\begin{equation*}
+    \boxed{y = 2e^{-x}\left(sin(x) - cos(x)\right)+C}
+\end{equation*}
+
+\textbf{e)} Dada a EDO $y' = -y$ e sabendo que sua solução é por integração, teremos que esta é separável então:
+\begin{equation*}
+    \frac{dy}{dx} = -y
+\end{equation*}
+Assim:
+\begin{equation*}
+    \int \frac{1}{y}dy = -\int dx
+\end{equation*}
+\begin{equation*}
+    ln(y) + c_1 = -x + c_2
+\end{equation*}
+Sabendo que $C = c_2-c_1$, teremos:
+\begin{equation*}
+    ln(y) = -x + C
+\end{equation*}
+aplicando a propriedade de logaritmo que $e^{ln(x)} = x$, e tirando o exponencial de ambos os lados, teremos que:
+\begin{equation*}
+    y = e^{-x}e^C
+\end{equation*}
+sendo $e^C=D$ uma constante qualquer:
+\begin{equation*}
+    \boxed{y = De^{-x}}
+\end{equation*}

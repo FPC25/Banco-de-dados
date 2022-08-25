@@ -1,0 +1,85 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+A eq. de Laplace em coordenadas cilíndricas:
+\begin{equation*}
+    \frac{1}{\rho}\frac{\partial }{\partial \rho}\left(\rho\frac{\partial u}{\partial \rho}\right) + \frac{1}{\rho^2}\frac{\partial^2 u}{\partial \theta^2} = 0
+\end{equation*}
+
+fazendo cada derivada de forma independente, teremos:
+\begin{enumerate}[i]
+    \item A derivada em relação a $\rho$:
+    \begin{equation*}
+        \frac{\partial u}{\partial \rho} = 3\rho^2(qsin(\theta) - 4sin^3(\theta))  
+    \end{equation*}
+    \item A derivação do item anterior:
+    \begin{equation*}
+        \frac{1}{\rho}\frac{\partial }{\partial \rho}\left(\rho\frac{\partial u}{\partial \rho}\right) = \frac{1}{\rho}\left(\frac{\partial u}{\partial \rho} + \rho\frac{\partial^2 u}{\partial \rho^2}\right) = \frac{1}{\rho}\frac{\partial u}{\partial \rho} + \frac{\partial^2 u}{\partial \rho^2} =
+    \end{equation*}
+    \begin{equation*}
+        3\rho(qsin(\theta) - 4sin^3(\theta)) + 6\rho(qsin(\theta) - 4sin^3(\theta)) =
+    \end{equation*}
+    \begin{equation*}
+        \boxed{ \frac{1}{\rho}\frac{\partial }{\partial \rho}\left(\rho\frac{\partial u}{\partial \rho}\right) = 9\rho(qsin(\theta) - 4sin^3(\theta)) }
+    \end{equation*}
+    \item Derivada em relação a $\theta$:
+    \begin{equation*}
+        \frac{\partial u}{\partial \theta} = \rho^3(qcos(\theta) - 12sin^2(\theta)cos(\theta))
+    \end{equation*}
+    \item segunda derivada em relação a $\theta$:
+    \begin{equation*}
+        \boxed{\frac{1}{\rho^2}\frac{\partial^2 u}{\partial \theta^2} = \rho(-qsin(\theta) - 12(2sin(\theta)cos^2(\theta) -sin^3(\theta)))}
+    \end{equation*}
+\end{enumerate}
+   
+Substituindo os termos encontradas na equação de Laplace:
+\begin{equation*}
+    9\rho(qsin(\theta) - 4sin^3(\theta)) + \rho(-qsin(\theta) - 12(2sin(\theta)cos^2(\theta) -sin^3(\theta))) = 0
+\end{equation*}
+\begin{equation*}
+    9\rho(qsin(\theta) - 4sin^3(\theta)) -\rho(qsin(\theta) + 24cos^2(\theta)sin(\theta) - 12sin^3(\theta) = 0
+\end{equation*}
+\begin{equation*}
+    8\rho q sin(\theta) - 36\rho sin^3(\theta) -24\rho cos^2(\theta)sin(\theta) + 12sin^3(\theta) = 0
+\end{equation*}
+\begin{equation*}
+    8\rho q sin(\theta) - 24\rho sin^3(\theta) -24\rho cos^2(\theta)sin(\theta) = 0
+\end{equation*}
+\begin{equation*}
+    \cancel{\rho sin(\theta)}(8q - 24cos^2(\theta)) = 24
+    \cancel{(\rho)}sin^{\cancel{3}}(\theta) 
+\end{equation*}
+Dividindo ambos os lados por $8$:
+\begin{equation*}
+    q = 3(sin^2(\theta) + cos^2(\theta))
+\end{equation*}
+sendo $sin^2(\theta) + cos^2(\theta) = 1$ a identidade trigonométrica, obtemos por fim que:
+\begin{equation*}
+    \boxed{q=3}
+\end{equation*}
+
+\textbf{b)}
+tendo que a conversão de coordenadas cilíndricas para cartesianas é dada por:
+\begin{equation*}
+    \begin{cases}
+        \rho = \sqrt{x^2+y^2}\\
+        z=z\\
+        \sin(\theta) = \frac{y}{\sqrt{x^2+y^2}}
+    \end{cases}
+\end{equation*}
+
+teremos que u(x, y, z) = u(x,y), que é dado por:
+\begin{equation*}
+    u(x,y) = (x^2+y^2)\sqrt{x^2+y^2}\left(\frac{3y}{\sqrt{x^2+y^2}} - \frac{4y^3}{(x^2+y^2)\sqrt{x^2+y^2}}\right) = 
+\end{equation*}
+\begin{equation*}
+    3x^2y + 3y^3 - 4y^3 \Rightarrow \boxed{u(x,y) = 3x^2y - y^3}
+\end{equation*}
+
+
+Como um polinômio homogêneo de grau 3 só apresenta monômios de grau 3, podemos dizer que $u(x,y)$ é um polinômio homogêneo de grau 3.
+
+Além disso, $\frac{\partial^2 u}{\partia x^2} = 6y$ e $\frac{\partial^2 u}{\partia y^2} = -6y$, o que implica que $\nabla^2 u = 0$, mostrando que é a solução encontrada nas coord. cartesianas é solução da eq. de Laplace nas coord. cartesianas.

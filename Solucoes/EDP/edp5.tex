@@ -1,0 +1,40 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+A equação de Laplace 2D:
+\begin{equation*}
+    \nabla^2u = 0 \Leftrightarrow \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} = 0
+\end{equation*}
+
+com isso, tiramos as segundas derivadas em relação a $x$ e a $y$ de $u(x,y)$:
+\begin{equation*}
+    \begin{cases}
+        u_x = \alpha cos(3x+5y)e^{\alpha x+\beta y} - 3sin(3x+5y)e^{\alpha x+\beta y}\\
+        u_{xx} = \alpha^2 cos(3x+5y)e^{\alpha x+\beta y} - 6\alpha sin(3x+5y)e^{\alpha x+\beta y} - 9cos(3x+5y)e^{\alpha x+\beta y}\\
+        u_t = \beta cos(3x+5y)e^{\alpha x+\beta y} - 5sin(3x+5y)e^{\alpha x+\beta y}\\
+        u_{tt} = \beta^2 cos(3x+5y)e^{\alpha x+\beta y} - 10\beta sin(3x+5y)e^{\alpha x+\beta y} - 25cos(3x+5y)e^{\alpha x+\beta y}\\
+    \end{cases}
+\end{equation*}
+Assim obtemos que:
+\begin{equation*}
+    [(\alpha^2 + \beta^2 - 34)cos(3x+5y) - (6\alpha+10\beta sin(3x+5y)]e^{\alpha x+\beta y} = 0
+\end{equation*}
+Como $e^{\alpha x+\beta y} \neq 0$, temos que:
+\begin{equation*}
+    \begin{cases}
+        \alpha^2+\beta^2=34\\
+        6\alpha + 10\beta = 0 \rightarrow \alpha = \frac{-5}{3}\beta
+    \end{cases}
+\end{equation*}
+Com isso, substituimos e obtemos:
+\begin{equation*}
+    \frac{25}{9}\beta^2 + \frac{9}{9}\beta^2 = 34 \rightarrow \frac{\cancel{34}}{9}\beta^2=\cancel{34}
+\end{equation*}
+Dessa forma chegamos à:
+\begin{equation*}
+    \begin{cases}
+        \beta \pm 3\\
+        \alpha \mp 5
+    \end{cases}
+\end{equation*}

@@ -1,0 +1,31 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aplicamos as condições de contorno:
+\begin{equation*}
+    \begin{cases}
+        u(0,t) = e^{qt}sin(0) = 0 \rightarrow Impossível\\
+        u(L,t) = e^{qt}sin(Lp) = 0
+    \end{cases}
+\end{equation*}
+Como $e^{qt} \neq 0$, então:
+\begin{equation*}
+    sin(Lp) = 0 \Longleftrightarrow Lp = k\pi \rightarrow \boxed{p = \frac{k\pi}{L}}
+\end{equation*}
+Agora derivemos em relação a $t$ e $x$:
+\begin{equation*}
+    \begin{cases}
+        u_t = qe^{qt}sin(px)\\
+        u_x = pe^{qt}cos(px)\\
+        u_{xx} = -p^2e^{qt}sin(px)
+    \end{cases}
+\end{equation*}
+Substituindo na equação de difusão:
+\begin{equation*}
+    q\cancel{e^{qt}sin(px)} = -(ap)^2\cancel{e^{qt}sin(px)}
+\end{equation*}
+\begin{equation*}
+    q = -(ap)^2 = -\left(\frac{ak\pi}{L}\right)^2
+\end{equation*}
+onde $k\in\Z^*$, pois se $k=0$ obtemos somente solução trivial.

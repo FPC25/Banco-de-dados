@@ -1,0 +1,49 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Fazemos as derivadas em relação a $x$ e $y$:
+\begin{equation*}
+    u_x = 5ax^4 + 4bx^3y + 3cx^2y^2 + 2sxy^3 + ey^4
+\end{equation*}
+\begin{equation*}
+    u_{xx} = 20ax^3 + 12bx^2y + 6cxy^2 + 2dy^3
+\end{equation*}
+\begin{equation*}
+    u_y = bx^4 + 2cx^3y + 3dx^2y^2 + 4exy^3 + 5fy^4
+\end{equation*}
+\begin{equation*}
+    u_{yy} = 2cx^3 + 6dx^2y + 12exy^2 + 20fy^3
+\end{equation*}
+
+Substituindo na equação de Laplace e divindo a mesma por 2:
+
+\begin{equation*}
+    10ax^3 + 6bx^2y + 3cxy^2 + dy^3 + cx^3 + 3dx^2y + 6exy^2 + 10fy^3 = 0
+\end{equation*}
+
+\begin{equation*}
+    x^3(10a+c) + x^2y(6b+3d) + xy^2(3c+6e) + y^3(d+10f) = 0
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+    10a+c = 0\\
+    6b+3d = 0\\
+    3c+6e = 0\\
+    d + 10f = 0
+    \end{cases}
+    \Rightarrow \begin{cases}
+    \boxed{c = -10a}\\
+    \boxed{d = -2b} \\
+    c = -2e \rightarrow \boxed{e = 5a}\\
+    d = -10f \rightarrow \boxed{f = \frac{b}{5}}
+    \end{cases}
+\end{equation*}
+
+Assim:
+\begin{equation*}
+    u(x,y) = ax^5 + bx^4y -10ax^3y^2 - 2bx^2y^3 + 5axy^4 + \frac{b}{5}y^5
+\end{equation*}
+\begin{equation*}
+    \boxed{u(x, y) = a(x^5 - 10x^3y^2 + 5xy^4) + b\left(x^4y - 2bx^2y^3 + \frac{1}{5}y^5\right)}
+\end{equation*}

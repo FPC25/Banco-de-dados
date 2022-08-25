@@ -1,0 +1,42 @@
+\linespread{1.5}
+\textbf{Solução}
+iniciamos determinando $f(x)$ e $g(x)$
+\begin{equation*}
+    f(x) = a_0 + \sum_{n=1}^\infty a_n\cos{(nw_fx)} + b_n\sin{(nw_fx)}
+\end{equation*}
+
+\begin{equation*}
+    g(x) = c_0 + \sum_{n=1}^\infty c_n\cos{(nw_gx)} + d_n\sin{(nw_gx)}
+\end{equation*}
+
+Agora multiplicamos $f(x)$ por $k$ e $g(x)$ por $m$
+
+\begin{equation*}
+    kf(x) = ka_0 + \sum_{n=1}^\infty ka_n\cos{(nw_fx)} + kb_n\sin{(nw_fx)}
+\end{equation*}
+
+\begin{equation*}
+    mg(x) = mc_0 + \sum_{n=1}^\infty mc_n\cos{(nw_gx)} + md_n\sin{(nw_gx)}
+\end{equation*}
+
+Somamos então $kf(x)$ e $mg(x)$:
+
+\begin{equation*}
+    kf(x) + mg(x) = ka_0 + \sum_{n=1}^\infty ka_n\cos{(nw_fx)} + kb_n\sin{(nw_fx)} + mc_0 + \sum_{n=1}^\infty mc_n\cos{(nw_gx)} + md_n\sin{(nw_gx)}
+\end{equation*}
+
+Se o período f(x) for igual ao período de g(x), então $w_f = w_g = w$. Logo:
+
+\begin{equation*}
+    kf(x) + mg(x) = (ka_0 + mc_0) + \sum_{n=1}^\infty (ka_n + mc_n)\cos{(nwx)} + (kb_n + md_n)\sin{(nwx)}
+\end{equation*}
+
+ou seja, a função $kf(x) + mg(x)$ tem os seguintes coeficientes de Fourier:
+\begin{equation*}
+    \boxed{ka_0 + mc_0} \hspace{3cm}
+    \boxed{ka_n + mc_n}
+    \hspace{3cm}
+    \boxed{kb_n + md_n}
+\end{equation*}
+
+c.q.d

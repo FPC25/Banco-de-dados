@@ -1,0 +1,86 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Como a EDO é de segunda ordem não-homogênea, temos que sua solução geral é dada por:
+\begin{equation*}
+    y_{Geral} = y_{Particular} + y_{Homogênea}
+\end{equation*}
+
+Dessa forma temos que calcular primeiramente a solução homogênea:
+
+\begin{equation*}
+    y''+4y'+4y=0
+\end{equation*}
+
+Como a solução vai ser do tipo $y = Ce^{px}$, se derivarmos chegaremos no polinômio característico:
+\begin{equation*}
+    p^2+4p+4=0
+\end{equation*}
+
+Solucionando por Baskara obtemos que:
+\begin{equation*}
+    p_1 = p_2 = -2
+\end{equation*}
+
+Dessa forma a solução 1 será do tipo:
+\begin{equation*}
+    y_1 = C_1e^{-2x}
+\end{equation*}
+
+enquanto a solução 2 será:
+\begin{equation*}
+    y_2 = C_2xe^{-2x}
+\end{equation*}
+
+Pelo princípio da superposição temos que:
+
+\begin{equation*}
+    \boxed{y_H = y_1 + y_2 = C_1e^{-2x} + C_2xe^{-2x}}
+\end{equation*}
+
+Com isso agora podemos resolver a particular pelo método de Lagrange:
+\begin{equation*}
+    y_P = y_1\int \frac{r(x)y_2}{W}dx + y_2\int \frac{-r(x)y_1}{W} dx
+\end{equation*}
+
+onde $r(x) = e^{-x}cos(x)$
+
+e o Wronzkiano W:
+
+\begin{equation*}
+ W = det\begin{vmatrix}
+    y'_1 & y'_2\\
+    y_1 & y_2
+    \end{vmatrix} = 
+    det\begin{vmatrix}
+    -2C_1e^{-2x} & C_2(e^{-2x} - 2xe^{-2x})\\
+    C_1e^{-2x} & C_2xe^{-2x}
+    \end{vmatrix} = -C_1C_2e^{-4x}
+\end{equation*}
+
+Agora substituímos:
+\begin{equation*}
+    y_P = \cancel{C_1}e^{-2x}\int \frac{(e^{-x}cos(x))\cancel{C_2}xe^{-2x}}{-\cancel{C_1C_2}e^{-4x}} dx + \cancel{C_2}xe^{-2x}\int \frac{-(e^{-x}cos(x))\cancel{C_1}e^{-2x}}{-\cancel{C_1C_2}e^{-4x}}dx
+\end{equation*}
+\begin{equation*}
+    y_P = e^{-2x}\int -xe^xcos(x) dx + xe^{-2x} \int e^xcos(x) dx = e^{-2x}(I) + xe^{-2x}(II)
+\end{equation*}
+
+\begin{equation*}
+    (I) = \int -xe^xcos(x) dx = \frac{-xe^xsin(x) - xe^xcos(x) + e^xsin(x)}{2}
+\end{equation*}
+
+\begin{equation*}
+    (II) = \int e^xcos(x) dx = \frac{e^xsin(x) + e^xcos(x) }{2}
+\end{equation*}
+
+voltando pra solução da particular
+\begin{equation*}
+    y_P =  \cancel{\frac{-xe^{-x}xsin(x)}{2}} - \cancel{\frac{xe^{-x}cos(x)}{2}} + \frac{e^{-x}sin(x)}{2} + \cancel{\frac{xe^{-x}sin(x)}{2}} + \cancel{\frac{xe^{-x}cos(x)}{2}} = \frac{e^{-x}sin(x)}{2}
+\end{equation*}
+
+Assim a solução geral é dado por:
+\begin{equation*}
+    \boxed{y_G = C_1e^{-2x} + C_2xe^{-2x} + \frac{e^{-x}sin(x)}{2}}
+\end{equation*}

@@ -1,0 +1,19 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Para verificar a paridade da função, basta determinarmos quais são os valores dos coeficientes reais de Fourier, pois se a função for par, $a_0=a_k=0\forall k \in \N$. No caso dela ser ímpar teríamos que $b_k=0\forall k \in \N$. Para testar isso, precisamos lembrar das relações de equivalência entre a forma real e complexa da série de Fourier:
+\begin{equation*}
+    \begin{cases}
+        a_0 = c_0\\
+        a_k = (c_k + c_{-k})\hspace{0.3cm}para\hspace{0.3cm}k\in\N\\
+        b_k = i(c_k - c_{-k})\hspace{0.3cm}para\hspace{0.3cm}k\in\N
+    \end{cases}
+\end{equation*}
+
+De cara já podemos ver que a função não é par, pois $a_0\neq0$, então basta verificarmos $b_k$:
+\begin{equation*}
+    b_k = i\left[\frac{1+ik}{k^4} - \left(\frac{1-ik}{(-k)^4}\right) \right] = i\left(\frac{1 -1 + ik + ik}{k^4}\right) = \frac{2i^2k}{k^4} = \frac{-2}{k^3} \neq 0 \forall k \in \N
+\end{equation*}
+
+Dessa forma mostramos que nenhum dos coeficientes de Fourier reais é nulo, dessa forma podemos afirmar que a função representada não é nem par nem ímpar.

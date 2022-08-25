@@ -1,0 +1,31 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Seja:
+
+\begin{equation*}
+    \begin{cases}
+    u_x = pcos(px+t)-sin(x+qt)\\
+    u_{xx} = -p^2sin(px+t) - cos(x+qt)\\
+    u_t = cos(px+t) - qsin(x+qt)\\
+    u_{tt} = -sin(px+t) -q^2cos(x+qt)
+    \end{cases}
+\end{equation*}
+
+substituindo as expressões das segundas derivadas na equação de onda:
+\begin{equation*}
+    u_{tt} = -sin(px+t) -q^2cos(x+qt) = a^2(-p^2sin(px+t) - cos(x+qt)) = a^2u_xx
+\end{equation*}
+Para que a igualdade seja verdadeira temos que:
+\begin{equation*}
+    \begin{cases}
+    (ap)^2 = 1\\
+    q^2 = a^2
+    \end{cases}
+    \longrightarrow
+    \begin{cases}
+    p = \pm a^-1\\
+    q = \pm a
+    \end{cases}
+\end{equation*}

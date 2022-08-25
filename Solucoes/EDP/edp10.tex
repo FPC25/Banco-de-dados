@@ -1,0 +1,63 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+substituímos $cos(\theta) = s$ e então calculamos os valor de $P_3(s)$:
+
+\begin{equation*}
+    P_3(s) = \frac{1}{3!2^3}\frac{d^3}{ds^3}(s^2-1)^3
+\end{equation*}
+
+calculemos as derivadas:
+\begin{equation*}
+    \frac{d}{ds} (s^2-1)^3 = 3(s^2-1)^22s = 6s(s^2-1)^2
+\end{equation*}
+\begin{equation*}
+    \frac{d^2}{ds^2} (s^2-1)^3 = 6[(s^2-1)^2 + 4s^2(s^2-1)] = 6(s^2-1)^2 + 24s^2(s^2-1)
+\end{equation*}
+\begin{equation*}
+    \frac{d^3}{ds^3}(s^2-1)^3 = 24s(s^2-1) + 48s(s^2-1) + 48s^3 = 72s(s^2-1) + 48s^3 = 120s^3 - 72s
+\end{equation*}
+
+Voltando para o polinômio e substituindo $s=cos(\theta)$, obtemos:
+\begin{equation*}
+    P_3(cos(\theta)) = \frac{1}{48}(120cos^3(\theta) - 72cos(\theta)) = \frac{5}{2}cos^3(\theta) - \frac{3}{2}cos(\theta)
+\end{equation*}
+
+Dessa forma a solução axi-simétrica em coordenadas esféricas é:
+\begin{equation*}
+    \boxed{r^3\left(\frac{5}{2}cos^3(\theta) - \frac{3}{2}cos(\theta)\right)}
+\end{equation*}
+
+\textbf{b)}
+
+Como temos coord. esféricas, temos que:
+\begin{equation*}
+    \begin{cases}
+    r = \sqrt{x^2 + y^2 + z^2}\\
+    cos(\theta) = \frac{x}{\sqrt{x^2 + y^2 + z^2}}
+    \end{cases}
+\end{equation*}
+e então:
+\begin{equation*}
+    u(x,y,z) = (x^2 + y^2 + z^2)\sqrt{x^2 + y^2 + z^2}\left(\frac{5}{2}\frac{x^3}{(x^2 + y^2 + z^2)\sqrt{x^2 + y^2 + z^2}} - \frac{3}{2}\frac{x}{\sqrt{x^2 + y^2 + z^2}}\right)
+\end{equation*}
+\begin{equation*}
+    u(x,y,z) = \frac{5}{2}x^3 - \frac{3}{2}x^3 - \frac{3}{2}xy^2 - \frac{3}{2}xz^2 \Rightarrow \boxed{u(x,y,z) = x^3 - \frac{3}{2}x(y^2 - z^2)}
+\end{equation*}
+
+Essa solução também é solução da eq. de Laplace nas coord. cartesianas:
+\begin{equation*}
+    \begin{cases}
+        u_{xx} = 6x\\
+        u_{yy} = -3x\\
+        u_{zz} = -3x\\
+        \Rightarrow \nabla^2 u(x,y,z) = u_{xx} + u_{yy} + u_{zz} = 0
+    \end{cases}
+\end{equation*}
+
+Assim botamos que u(x,y,z) é composto de monômios de mesma ordem podemos dizer que é um polinômio homogêneo, e também é solução da EDP de Laplace.
+
+

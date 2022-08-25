@@ -1,0 +1,69 @@
+\linespread{1.5}
+
+\textbf{\textit{Solução}}
+Sabendo que $b\in \R$ temos que a E.D.O. é de homogênea  e coeficiente constantes, dessa forma temos que a solução geral será igual a solução da homogênea , dessa forma temos que a(s) solução(ões) terão a seguinte forma:
+\begin{equation*}
+    y = Ce^{pt}
+\end{equation*}
+Dessa forma, após tiradas as derivadas e substituindo na equação, temos o polinômio característico:
+\begin{equation*}
+    p^2 + 2b + 1 = 0 
+\end{equation*}
+que por Baskara teremos que:
+\begin{equation*}
+    p = \frac{-2b\pm \sqrt{4b^2-4}}{2} = -b\pm \sqrt{b^2-1}
+\end{equation*}
+Dessa forma a solução depende exclusivamente do valor que $b$ assume:
+\begin{enumerate}[I]
+    \item se $\Delta<0$, então $|b|<1$ e
+    \begin{equation*}
+        \begin{cases}
+            p_1 = -b + i\sqrt{b^2-1}\\
+            p_2 = -b - i\sqrt{b^2-1}
+        \end{cases}
+    \end{equation*}
+    e assim teremos duas soluções, que segundo o princípio da superposição, pode ser combinada em uma solução geral da seguinte forma: 
+    \begin{equation*}
+        y(t) = C_1e^{p_1t} + C_2e^{p_2t} = C_1e^{(-b + i\sqrt{b^2-1})t} + C_2e^{( -b - i\sqrt{b^2-1})t}
+    \end{equation*}
+    por questões de simplicidade $\alpha = \sqrt{b^2-1}$
+    \begin{equation*}
+        y(t) =  e^{-bt}(C_1e^{i\alpha t} + C_2e^{-i\alpha t})
+    \end{equation*}
+    Supondo $C_1 = C_2 = 1/2$ e lembrarmos da formas complexas de Euler para seno e cosseno:
+    \begin{equation*}
+        y(t) =  e^{-bt}cos(\alpha t)
+    \end{equation*}
+    Supondo $C_1 = 1/2i$ e $C_2 = -1/2i$:
+    \begin{equation*}
+        y(t) =  e^{-bt}sin(\alpha t)
+    \end{equation*}
+    que também podemos combinar e generalizar ao multiplicar tais equações por uma constante arbitrária:
+    \begin{equation*}
+        \boxed{y_G(t) = e^{-bt}(D_1cos(t\sqrt{b^2-1}) + D_2sin(t\sqrt{b^2-1}))}
+    \end{equation*}
+    
+    \item Se $\Delta = 0$, então $|b| = 1$, assim $p_1 = p_2 = -b$. Dessa forma:
+    \begin{equation*}
+        \begin{cases}
+            y_1 = C_1e^{-bt}\\
+            y_2 = y_1' = C_2be^{-bt}
+        \end{cases}
+    \end{equation*}
+    Assumindo $C_2=-C_1$, assim teremos que:
+    \begin{equation*}
+       \boxed{ y_G(t) = e^{-bt}(C_1 + C_2t)}
+    \end{equation*}
+    
+    \item Se $\Delta > 0$, então $|b| > 1$. Dessa forma, essa solução se assemelha aquela achada inicialmente para o primeiro caso, pois:
+    \begin{equation*}
+         \begin{cases}
+            p_1 = -b + \sqrt{b^2-1}\\
+            p_2 = -b - \sqrt{b^2-1}
+        \end{cases}
+    \end{equation*}
+    Logo:
+    \begin{equation*}
+       \boxed{ y_G(t) =  e^{-bt}(C_1e^{t\sqrt{b^2-1}} + C_2e^{-t\sqrt{b^2-1}})}
+    \end{equation*}
+\end{enumerate}

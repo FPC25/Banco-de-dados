@@ -1,0 +1,14 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\begin{equation*}
+    \hat{f}_c(w) = \sqrt{\frac{2}{\pi}}\int_0^\infty f(x)cos(wx)dx = \sqrt{\frac{2}{\pi}}\int_0^k xcos(wx)dx = \sqrt{\frac{2}{\pi}}\left\{\left[\frac{xsin(wx)}{w}\right]^k_0 - \int_0^k\frac{sin(wx)}{w}\right\}
+\end{equation*}
+\begin{equation}
+   =  \sqrt{\frac{2}{\pi}}\left\{\left[\frac{xsin(wx)}{w}\right]^k_0 + \left[\frac{cos(wx)}{w^2}\right]_0^k\right\} = \sqrt{\frac{2}{\pi}}\left[\frac{ksin(wk)}{w} + \frac{cos(wk)}{w^2} - \frac{1}{w^2}\right]
+\end{equation}
+
+\begin{equation*}
+    \boxed{ \hat{f}\_c(w) = \sqrt{\frac{2}{\pi}}\left[\frac{ksin(wk)}{w} + \frac{(cos(wk)-1)}{w^2}\right] }
+\end{equation*}

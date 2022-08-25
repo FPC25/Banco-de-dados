@@ -1,0 +1,43 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)} Integral de Fourier cosseno:
+
+Como a função $f(x)$ satisfaz os critérios do teorema de Fourier, então a integral de Fourier cosseno de $f(x)$ é dada por:
+
+\begin{equation*}
+    f(x) =  \int_0^\infty A(w) cos(wx)dw
+\end{equation*}
+onde:
+\begin{equation*}
+    A(w) = \frac{2}{\pi}\int_0^\infty f(v) cos(wv)dv
+\end{equation*}
+
+Dessa forma:
+\begin{equation*}
+    A(w) = \frac{2}{\pi} \int_0^a cos(wv)dv = \frac{2}{\pi}\left[\frac{sin(wv)}{w}\right]^a_0 = \frac{2sin(wa)}{w\pi}
+\end{equation*}
+logo:
+\begin{equation*}
+    \boxed{ \frac{2}{\pi}\int_0^\infty \frac{sin(wa)cos(wx)}{w}dw }
+\end{equation*}
+
+\textbf{b)} integral de Fourier seno
+
+Já foi dito que a função $f(x)$ satisfaz os critérios de Fourier, logo a integral de Fourier seno é dada por:
+\begin{equation*}
+    f(x) = \int_0^\infty B(w)sin(wx)dw
+\end{equation*}
+onde:
+\begin{equation*}
+    B(w) = \frac{2}{\pi} \int_0^\infty f(v) sin(wv)dv
+\end{equation*}
+
+Dessa forma teremos que:
+\begin{equation*}
+    B(w) = \frac{2}{\pi} \int_0^a sin(wv)dv = \frac{2}{\pi}\left[\frac{-cos(wv)}{w}\right]^a_0 = \frac{2}{\pi}\left[\frac{-cos(wa)+1}{w}\right]
+\end{equation*}
+\begin{equation*}
+    \therefore \boxed{ f(x) = \frac{2}{\pi}\int_0^\infty \left[\frac{-cos(wa)+1}{w}\right] sin(wx)dw }
+\end{equation*}

@@ -1,0 +1,20 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aqui podemos usar da propriedade da imagem da convolução:
+\begin{equation*}
+    h(t) = f(t)*g(t) \xrightarrow{\mathcal{L}} F(s).G(s)
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases}
+    cos(t) \xrightarrow{\mathcal{L}} \frac{s}{s^2+1}\\
+    sin(t) \xrightarrow{\mathcal{L}} \frac{1}{s^2+1}
+    \end{cases}
+\end{equation*}
+
+dessa forma:
+\begin{equation*}
+    H(s) = \frac{s}{(s^2+1)^2}
+\end{equation*}

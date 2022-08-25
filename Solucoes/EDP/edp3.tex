@@ -1,0 +1,36 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+Devido as propriedades comutativas e associativas das derivadas, temos que se: $v(x,t) = u_t(x, t) = \frac{\partial }{\partial t}u(x,t)$, podemos derivar a equação de onda em relação a $t$:
+\begin{equation*}
+    \frac{\partial }{\partial t}(u_{xx}a^2) = \frac{\partial }{\partial t}(u_{tt}) \Rightarrow u_{xxt}a^2 = u_{ttt}
+\end{equation*}
+
+Assim podemos fazer que:
+\begin{equation*}
+    (u_t)_{tt} = a^2(u_t)_{xx}
+\end{equation*}
+como $u_t = v$:
+\begin{equation*}
+    v_{tt} = a^2v_{xx}
+\end{equation*}
+Mostrando que $v(x,t) = u_t(x,t)$, também é solução da equação de onda 
+
+\textbf{b)}
+
+Seguindo o mesmo raciocino do item anterior, chamando $\frac{\partial^{n+m} u}{\partial x^n\partial t^m}u(x,t) = g(x,t)$. Se derivarmos a equação de onda em relação a $x$ $n$ vezes, e em relação a $t$ $m$ vezes, teremos:
+\begin{equation*}
+    (\frac{\partial^2 u}{\partial t^2})(a^2 \frac{\partial^2 u}{\partial x^2}) = \frac{\partial^{n+m} }{\partial x^n\partial t^m }(\frac{\partial^2 u}{\partial t^2})
+\end{equation*}
+Aplicando a propriedade da comutatividade, teremos que:
+\begin{equation*}
+    \frac{\partial^2 }{\partial x^2} (a^2 \frac{\partial^{n+m} }{\partial x^n\partial t^m}u) = \frac{\partial^2}{\partial t^2}(\frac{\partial^{n+m} }{\partial x^n\partial t^m}u)
+\end{equation*}
+\begin{equation*}
+    a^2 \frac{\partial^2 }{\partial x^2}g = \frac{\partial^2}{\partial t^2}g \Leftrightarrow g_{tt} = a^2g_{xx} 
+\end{equation*}
+Que é a equação de onda, provando q uma função qualquer que seja derivada de qualquer ordem em relação $x$ ou $t$ de u(x,t), solução da equação de onda, também é solução da equação de onda 1D.
+

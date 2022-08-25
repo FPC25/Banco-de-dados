@@ -1,0 +1,56 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+
+Aqui é uma EDO de primeira ordem não homogênea. Para solucionarmos procuramos um fator integrante de forma que:
+
+\begin{equation*}
+    f(x)y'(x) + f(x)p(x)y(x) = f(x)r(x) 
+\end{equation*}
+
+onde a solução da EDO é dada por:
+\begin{equation*}
+    y_G = \frac{1}{f(x)}\left(\int r(x)f(x) dx + C \right)
+\end{equation*}
+
+e \begin{equation*}
+    f(x) = e^{\int p(x) dx}
+\end{equation*}
+
+Nesse caso $p(x) = 2$ e $r(x) = 4cos(2x)$
+
+Assim:
+
+\begin{equation*}
+    f(x) = e^{\int 2 dx} = e^{2x}
+\end{equation*}
+
+e 
+
+\begin{equation*}
+    \int 4e^{2x}cos(2x) dx = e^{2x}(sin(2x) + cos(2x))
+\end{equation*}
+
+Dessa forma:
+
+\begin{equation*}
+    y_G = e^{-2x}(e^{2x}(sin(2x) + cos(2x)) + C)
+\end{equation*}
+\begin{equation*}
+    \boxed{y_G = sin(2x) + cos(2x) + Ce^{-2x}}
+\end{equation*}
+
+\textbf{b)} 
+
+Com $y\left(\frac{\pi}{4}\right) = 3$ teremos que:
+
+\begin{equation*}
+    y_P = sin\left(\frac{\pi}{2}\right) + cos\left(\frac{\pi}{2}\right) + Ce^{\frac{\pi}{2}} = 3 \longrightarrow C = 2e^{-\frac{\pi}{2}}
+\end{equation*}
+
+Dessa forma temos que:
+\begin{equation*}
+    \boxed{y_P = sin(2x) + cos(2x) + e^{\frac{\pi - 4x}{2}}}
+\end{equation*}

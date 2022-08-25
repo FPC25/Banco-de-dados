@@ -1,0 +1,30 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Sendo $T = 2\pi$ e seja:
+\begin{equation*}
+    f(t) \xrightarrow{\mathcal{L}} F(s) = \frac{G(s)}{1-e^{-Ts}}
+\end{equation*}
+
+e 
+
+\begin{equation*}
+    G(s) = \int_0^T g(t)e^{-st}dt = \int_0^\pi te^{-st}dt + \int_\pi^{2\pi} (-t+2\pi)e^{-st}dt = (I) + (II)
+\end{equation*}
+
+\begin{equation*}
+    (I) = \int_0^\pi te^{-st}dt = \left[\frac{te^{-st}}{-s}\right]^\pi_0 + \left[\frac{e^{-st}}{-s^2}\right]^\pi_0 = \frac{\pi e^{-s\pi}}{\pi} - \frac{e^{-s\pi}}{s^2} + \frac{1}{s^2} = \frac{1-e^{-s\pi}(1+s\pi)}{s^2}
+\end{equation*}
+
+\begin{equation*}
+    (II) = \int_\pi^{2\pi} (-t+2\pi)e^{-st}dt = \int_\pi^{2\pi}-te^{-st}dt + 2\pi\int_\pi^{2\pi}e^{-st}dt = \frac{e^{-s\pi}}{s^2}(s\pi+e^{-\pi s} - 1)
+\end{equation*}
+
+então:
+\begin{equation*}
+    G(s) = (I) + (II) = \cancel{\frac{\pi e^{-s\pi}-\pi e^{-s\pi}}{s}} + \frac{1 - 2e^{-\pi s} + e^{-2\pi s}}{s^2} \Rightarrow \boxed{G(s) = \frac{1 - 2e^{-\pi s} + e^{-2\pi s}}{s^2} } 
+\end{equation*}
+
+Determinando então $F(s)$:
+\boxed{F(s) = \frac{1 - 2e^{-\pi s} + e^{-2\pi s}}{s^2(1-e^{-2\pi s})}}

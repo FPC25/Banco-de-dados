@@ -1,0 +1,103 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aqui temos uma EDO linear de 2ª ordem não homogênea. Desta forma teremos que resolver essa pelo método de Lagrange. Dado esse método, temos que a solução geral é dado por:
+\begin{equation*}
+    y_G = y_H + y_P
+\end{equation*}
+
+sendo $y_H$ a solução da EDO homogênea e $y_P$ é a solução da particular não-homogênea. Dessa forma solucionamos primeiramente a homogênea:
+\begin{equation*}
+    y''+y'=0
+\end{equation*}
+
+sabemos que a solução dessa equação é do tipo $Ce^{px}$, assim, derivando e substituído temos 
+\begin{equation*}
+    Ce^{px}(p^2+p)=0
+\end{equation*}
+Tomemos que $Ce^{px} \neq 0 $, então o polinômio característico é dado por:
+\begin{equation*}
+    p^2 + p=0
+\end{equation*}
+que por Baskara, temos que:
+\begin{equation*}
+    \begin{cases}
+    p = -1\\
+    p = 0
+    \end{cases}
+\end{equation*}
+Assim as soluções da homogênea é dado por:
+\begin{equation*}
+    \begin{cases}
+    y_1 = C_1e^{-x}\\
+    y_2 = C_2e^{0} = C_2
+    \end{cases}
+\end{equation*}
+e então, pelo princípio da sobreposição, a solução da homogênea também é:
+\begin{equation*}
+    y_H = y_1 + y_2 = C_1e^{-x} + C_2 
+\end{equation*}
+
+Com isso agora podemos resolver a particular pelo método de Lagrange:
+\begin{equation*}
+    y_P = y_1\int \frac{r(x)y_2}{W}dx + y_2\int \frac{-r(x)y_1}{W} dx
+\end{equation*}
+onde $r(x) = mx^2$, onde $m =0.001$ e $W$ é o Wronskiano, que calcularemos primeiro:
+\begin{equation*}
+    W = det\begin{vmatrix}
+    y'_1 & y'_2\\
+    y_1 & y_2
+    \end{vmatrix} = det\begin{vmatrix}
+    -C_1e^{-x} & 0 \\
+    C_1e^{-x} & C_2
+    \end{vmatrix} = -C_1C_2e^{-x}
+\end{equation*}
+
+Dessa forma, teremos que:
+\begin{equation*}
+    y_P = \cancel{C_1}e^{-x}\int \frac{mx^2\cancel{C_2}}{-\cancel{C_1C_2}e^{-x}} dx + \cancel{C_2}\int \frac{-mx^2\cancel{C_1}e^{-x}}{-\cancel{C_1C_2}e^{-x}} dx = -me^{-x} \int x^2e^{x} dx + m\int x^2 dx
+\end{equation*}
+\begin{equation*}
+    y_P = -me^{-x}[(x^2-2x + 2)e^x] + \frac{mx^3}{3}
+\end{equation*}
+\begin{equation*}
+    y_P = m\left(\frac{x^3}{3} -x^2 + 2x - 2\right) 
+\end{equation*}
+
+Dessa forma, pelo princípio da superposição, temos que a solução geral da EDO é dada por:
+\begin{equation*}
+    y_G = C_1e^{-x} + C_2 + 0.001\left(\frac{x^3}{3} -x^2 + 2x - 2\right)
+\end{equation*}
+
+Como $C_2 - 0.002$ também é uma constante podemos simplificar e considerar somente uma constante $C_3 = C_2 - 0.002$:
+
+\begin{equation*}
+    \boxed{y_G = C_1e^{-x} + C_3 + 0.001\left(\frac{x^3}{3} -x^2 + 2x\right)}
+\end{equation*}
+
+\textbf{b)}
+
+Aplicando as condições iniciais, $y(0) = 0$ e $y'(0) = 1.5$, vamos obter que:
+\begin{equation*}
+    y(0) = C_1 + C_3 = 0 \longrightarrow C_3 = -C_1
+\end{equation*}
+
+\begin{equation*}
+    y'_G = -C_1e^{-x} + 0.001\left(x^2 - 2x + 2\right)
+\end{equation*}
+Aplicando a condição:
+\begin{equation*}
+    y'(0) = -C_1 + 0.002 = 1.5 \longrightarrow C_1 = -1.498 
+\end{equation*}
+
+Com isso teremos que:
+\begin{equation*}
+    C_3 = -(-1.498) = 1.498
+\end{equation*}
+
+Dessa forma a solução particular obtida pela imposição das condições iniciais é:
+\begin{equation*}
+    \boxed{y_P = 1.498 - 1.498e^{-x} +  0.001\left(\frac{x^3}{3} -x^2 + 2x\right)}
+\end{equation*}
+

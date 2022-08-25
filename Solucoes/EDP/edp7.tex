@@ -1,0 +1,77 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)}
+Como é uma equação de onda 1D no domínio infinito, podemos usar a fórmula de d'Alembert p/ resolver a EDP nas condições iniciais dadas.
+
+\begin{equation*}
+    u(x,t) = \frac{1}{2}(f(x-at)+f(x+at)) + \frac{1}{2a}\int_{x-at}^{x+at} g(\lambda)d\lambda,
+\end{equation*}
+onde $f(x) = u(x,0) = e^{-x^2}$ e $g(x) = u_t(x,0) = 10xe^{-x^2}$ e $a = \pm 5$.
+
+\underline{Quando a=5:}
+
+\begin{equation*}
+    \begin{cases}
+        f(x-5t) = e^{-(x-5t)^2}\\
+        f(x+5t) = e^{-(x+5t)^2}
+    \end{cases}
+\end{equation*}
+
+\begin{equation*}
+    u(x,t) = \frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2} + \frac{1}{\cancel{10}}\int_{x-5t}^{x+5t} \cancel{10}\lambda e^{-\lambda^2}d\lambda = \frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2} - \left[\frac{e^{-\lambda^2}}{2}\right]_{x-5t}^{x+5t} 
+\end{equation*}
+\begin{equation*}
+    \frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2} - \left(\frac{e^{-(x+5t)^2}-e^{-(x-5t)^2}}{2}\right) = \frac{2e^{-(x-5t)^2}}{2}
+\end{equation*}
+\begin{equation*}
+    u_1(x,t) = e^{-(x-5t)^2}
+\end{equation*}
+
+\underline{Quando a=-5}
+
+\begin{equation*}
+    u_2(x,t) = \frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2} - \left[\frac{e^{-\lambda^2}}{2}\right]_{x-5t}^{x+5t} = \frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2} - \left(\frac{e^{-(x-5t)^2}+e^{-(x+5t)^2}}{2}\right) 
+\end{equation*}
+\begin{equation*}
+    u_2(x,t) = e^{-(x+5t)^2}
+\end{equation*}
+
+com isso vemos que a solução é realmente do tipo:
+\begin{equation*}
+    u(x,t) = e^{-(x-at)^2}
+\end{equation*}
+
+\textbf{b)}
+
+De forma geral testemos as condições iniciais:
+\begin{equation*}
+    \begin{cases}
+        u_t = 2a(x-at)e^{-(x-at)^2}\\
+        u_{tt} = (2ax - 2a^2t)^2e^{-(x-at)^2}-2a^2e^{-(x-at)^2}\\
+        u_x = -2(x-at)e^{-(x-at)^2}\\
+        u_{xx} = (-2x+2at)^2e^{-(x-at)^2} - 2e^{-(x-at)^2}
+    \end{cases}
+\end{equation*}
+
+testemos as condições iniciais 
+\begin{equation*}
+    u(x,0) =  e^{-x^2} = f(x)  \forall a
+    u_t(x, 0) = 2axe^{-x^2}
+\end{equation*}
+se $a=5 \Rightarrow 10xe^-x^2 = g(x)$, se $a=-5 \Rightarrow -10xe^-x^2 \neq g(x)$.
+
+Assim a solução que satisfaz as condições é $\boxed{u(x,t) = e^{-(x-5t)^2}}$, portanto $a=5$
+
+\textbf{b)}
+
+Verifiquemos a solução:
+\begin{equation*}
+    [(2ax - 2a^2t)^2 - 2a^2]\cancel{e^{-(x-at)^2}} = a^2\cancel{e^{-(x-at)^2}}[(-2x+2at)^2 - 2]
+\end{equation*}
+\begin{equation*}
+    (4a^2x^2 - 8a^3xt + 4a^4t^2) - 2a^2 = 4a^2x^2 - 8a^3xt + 4a^4t^2 -2a^2
+\end{equation*}
+
+Como vemos que a igualdade é verdadeira, vemos que a solução do tipo $u(x,t) = e^{-(x-at)^2}$ satifaz a EDP, independente de $a$, então dessa forma sabemos que quando $a=5$ $u(x,t)$ também será solução da equação de onda.

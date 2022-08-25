@@ -1,0 +1,36 @@
+\linespread{1.5}
+\textbf{Solução}
+Para essa função $T=2\pi$ e portanto $w=1$.
+Sendo a série de Fourier complexa dada por:
+\begin{equation}
+    \label{eq:Fouriercomplexa}
+    f(x) = \sum^{+\infty}_{k=-\infty} c_k e^{ikwx}
+\end{equation}
+\begin{equation}
+    \label{eq:ckFouerier}
+    c_k = \frac{1}{T} \int^T_0 f(x)e^{-ikwx}dx
+\end{equation}
+
+calculemos então $c_k$:
+\begin{equation*}
+    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi e^x e^{-ikwx}dx = \frac{1}{2\pi}\int_{-\pi}^\pi e^{x(1-ikw)}dx = \frac{1}{2\pi}\left[\frac{e^{x(1-ikw)}}{1-ikw}\right]_{\pi}^\pi  
+\end{equation*}
+\begin{equation*}
+    \frac{1}{2\pi}\left[\frac{e^{\pi(1-ikw)}}{1-ikw} - \frac{e^{-\pi-ikw)}}{1-ikw}\right] = \frac{1}{2\pi}\left[\frac{e^\pi e^{-ikw\pi}}{1-ikw} - \frac{e^{-\pi}e^{ikw\pi}}{1-ikw}\right]
+\end{equation*}
+Temos que para $w=1$:
+\begin{equation*}
+    e^{-ik\pi} = e^{ik\pi} = (-1)^k
+\end{equation*}
+
+logo:
+\begin{equation*}
+    c_k = \frac{1}{2\pi}\left[\frac{e^\pi (-1)^k}{1-ik} - \frac{e^{-\pi}(-1)^k}{1-ik}\right] = \frac{1}{2\pi}\left[\frac{(-1)^k(e^\pi - e^{-\pi}}{1-ik}\right]\frac{1+ik}{i+ik}
+\end{equation*}
+\begin{equation*}
+    = \frac{e^\pi - e^{-\pi}}{2\pi}\frac{(-1)^k(1+ik)}{1+k^2} \rightarrow{} \boxed{c_k = \frac{sinh(\pi)}{\pi}\frac{(-1)^k(1+ik)}{1+k^2}}
+\end{equation*}
+onde $sinh(x) = \frac{e^x-e^{-x}}{2}$, seno hiperbólico. Substituindo $c_k$ na forma de Fourier complexa, nós temos:
+\begin{equation}
+    \boxed{f(x) = \sum^\infty_{k=-\infty} \frac{sinh(\pi)}{\pi}\frac{(-1)^k(1+ik)}{1+k^2}e^{ikx}}
+\end{equation}

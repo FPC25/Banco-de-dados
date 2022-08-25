@@ -1,0 +1,42 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aplicando a primeira condição de contorno:
+\begin{equation*}
+    u(0,t) = pcos(rt) = 0
+\end{equation*}
+Como $cos(rt) \neq 0$, pois caso contrário teríamos a solução trivial, obtemos que $\boxed{p=0}$. Aplicando a outra condição de contorno e já substituindo $p$:
+\begin{equation*}
+    u(10,t) = sin(10q)cos(rt) = 0 \Rightarrow sin(q10) = 0
+\end{equation*}
+\begin{equation*}
+    \boxed{q = \frac{k\pi}{10}}, k\in\Z^*
+\end{equation*}
+
+Com isso obtemos já uma solução que satisfaz as condições de contorno:
+\begin{equation*}
+    u(x,t) = sin\left(\frac{k\pi x}{10}\right)cos(rt)
+\end{equation*}
+Mas agora precisamos determinar a solução particular, ou seja, determinar o valor de $r$:
+\begin{equation*}
+    \begin{cases}
+        u_{tt} = -r^2sin\left(\frac{k\pi x}{10}\right)cos(rt)\\
+        u_{xx} = -\left(\frac{k\pi}{10}\right)^2sin\left(\frac{k\pi x}{10}\right)cos(rt)
+    \end{cases}
+\end{equation*}
+Substituindo na equação de onda:
+\begin{equation*}
+    -r^2\cancel{sin\left(\frac{k\pi x}{10}\right)cos(rt)} = -25\left(\frac{k\pi}{10}\right)^2\cancel{sin\left(\frac{k\pi x}{10}\right)cos(rt)}
+\end{equation*}
+\begin{equation*}
+    r^2 = 25\left(\frac{k\pi}{10}\right)^2 \Rightarrow r = \pm 5\left(\frac{k\pi}{10}\right) = \pm \frac{k\pi}{2}
+\end{equation*}
+Sabendo que a função cosseno é uma função par, ou seja, $cos(x) = cos(-x)$:
+\begin{equation*}
+    \boxed{r = \frac{k\pi}{2}}
+\end{equation*}
+Dessa forma obtemos que a solução particular para essa EDP é dada por:
+\begin{equation*}
+    \boxed{u(x,t) = sin\left(\frac{k\pi x}{10}\right)cos\left(\frac{k\pi t}{2}\right),\hspace{0,2cm}com\hspace{0,2cm}k\in\Z^*.}
+\end{equation*}

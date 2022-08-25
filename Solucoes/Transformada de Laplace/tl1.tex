@@ -1,0 +1,160 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+\textbf{a)} Podemos escrever $\pi^t$ como $\pi^t = e^{ln(\pi)^t}$
+
+A imagem desse original pode ser calculada da seguinte forma:
+\begin{equation*}
+    F(s) = \int_0^\infty f(t)e^{-st} dt = \int_0^\infty e^{ln(\pi)^t}e^{-st} dt = \int_0^\infty e^{(ln\pi - s)t}dt = \left[\frac{1}{ln\pi - s}e^{(ln\pi - s)t} - \right]^\infty_0
+\end{equation*}
+
+Como $Re(s) > ln\pi$ então $Re(s) - ln\pi > 0$ $\Longrightarrow$ $ ln\pi - Re(s) < 0$, logo:
+
+\begin{equation*}
+    \lim_{t->\infty}\cancel{\frac{1}{ln\pi - s}e^{(ln\pi - s)t}} - \frac{1}{ln\pi - s}e^{(ln\pi - s)0} 
+\end{equation*}
+
+\begin{equation*}
+    \boxed{F(s) = \frac{1}{ln\pi - s}}
+\end{equation*}, onde $F(s)$ é analítica em toda a região  $Re(s) > ln\pi$
+
+\textbf{b)}
+
+Utilizando a propriedade da derivação da imagem, temos que:
+\begin{equation*}
+    \begin{cases}
+    (-1)^nt^nf(t) \xrightarrow{\mathcal{L}} F^{(n)}(s), \hspace{0.2cm} onde \hspace{0.2cm} f(t) = sin(wt) \hspace{0.2cm} Então\\
+    (-1)^2t^2sin(wt) \xrightarrow{\mathcal{L}} F''(s),
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    sin(wt) \xrightarrow{\mathcal{L}} \frac{w}{(s^2+w^2)} \longrightarrow F''(s) =\left[\frac{w}{(s^2+w^2}\right]'' = \frac{-2w[(s^2+w^2)^2] + 8s^2w(s^2+w^2)}{(s^2+w^2)^4} = \boxed{\frac{6s^2w - 2w^3}{(s^2+w^2)^3}} 
+\end{equation*}
+
+\textbf{c)} A função $f(t)$ pode ser escrita como uma soma de funções de heavyside:
+\begin{equation*}
+    f(t) = h(t) - 2h(t-5) + h(t-10)
+\end{equation*}
+
+Utilizando a propriedade da linearidade, temos:
+\begin{equation*}
+    f(t) \xrightarrow{\mathcal{L}}F(s) = \mathcal{L}{h(t)} +  \mathcal{L}{-2h(t-5)} +  \mathcal{L}{h(t-10)} \longrightarrow \boxed{F(s) = \frac{1}{s} - \frac{2e^{-5s}}{s} + \frac{e^{-5s}}{s}}
+\end{equation*}
+
+\textbf{d)} 
+
+Nesta questão, podemos utilizar a propriedade da Integração de Imagem:
+
+\begin{equation*}
+    \frac{f(t)}{t} \xrightarrow{\mathcal{L}} \int_s^\infty F(z)dz
+\end{equation*}
+
+Precisamos primeiro acahar a integral de $sinh(t)$, lembrando que $sinh(t) = \frac{e^t - e^{-t}}{2}$ $\therefore$
+
+\begin{equation*}
+    F(s) = \int_0^\infty \frac{e^t - e^{-t}}{2} e^{-st} dt = \int_0^\infty \frac{e^{(1-s)t}}{2}dt - \int_0^\infty \frac{e^{-(1+s)t}}{2} = 
+    \left[\frac{e^{(1-s)t}}{2(1-s)}\right]^\infty_0 - \left[\frac{e^{-(1+s)t}}{-2(1-s)}\right]^\infty_0 = 
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2(s-1)} - \frac{1}{(2(1+s)} = \frac{(s+1) - (s-1)}{2(s-1)(s+1)} = \frac{1}{s^2 - 1}
+\end{equation*}
+Então
+\begin{equation*}
+    \frac{sinh(t)}{t} \xrightarrow{\mathcal{L}} \int_s^\infty F(z)dz = \int_s^\infty \frac{1}{z^2-1}dz = \int_s^\infty \frac{1}{(z-1)(z+1)}dz
+\end{equation*}
+Por frações parciais, temos
+\begin{equation*}
+    \int_s^\infty F(z)dz = \frac{1}{2} \left[\int_s^\infty -\frac{1}{(z+1)}dz +  \int_s^\infty \frac{1}{z-1}dz\right] = \left[\frac{-1}{2}ln|z+1| + \frac{1}{2}ln|z-1|\right]^\infty_s = 
+\end{equation*}
+\begin{equation*}
+    = \lim_{z->\infty} \left[\frac{-1}{2}ln|z+1| + \frac{1}{2}ln|z-1|\right] - \left[\frac{1}{2}ln\frac{s-1}{s+1}\right] = \lim_{z->\infty} \left[\frac{1}{2}ln\frac{1-\cancel{\frac{1}{z}}}{1+\cancel{\frac{1}{z}}}\right] - \frac{1}{2}ln\frac{s-1}{s+1}
+\end{equation*}
+\begin{equation*}
+    \boxed{F(s) = \frac{1}{2}\left|\frac{s+1}{s-1}\right|}
+\end{equation*}
+
+\textbf{e)}
+
+Considera $f(t) = t - (t-3)h(t-3)$
+
+sabemos que:
+\begin{equation*}
+    \begin{cases}
+    t\xrightarrow{\mathcal{L}}\frac{1}{s^2}\\
+    (t-3)h(t-3) \xrightarrow{\mathcal{L}} \frac{e^{-3s}}{s^2}
+    \end{cases}\therefore \boxed{F(s) = \frac{1}{s^2} - \frac{e^{-3s}}{s^2} = \frac{1-e^{-3s}}{s^2}}
+\end{equation*}
+
+\textbf{f)}
+Lembremos que $cos(t) = \frac{e^{it} + e^{-it}}{2}$, então $cos^2(t) = \frac{1}{2} + \frac{1}{2}\left(\frac{e^{2it} + e^{-2it}}{2}\right) = \frac{1}{2} + \frac{1}{2}cos(2t)$, lembrando também que $cos(wt) \xrightarrow{\mathcal{L}} \frac{s}{s^2+w^2}$
+
+\begin{equation*}
+    \begin{cases}
+    \frac{cos(2t)}{2} \xrightarrow{\mathcal{L}} \frac{s}{2(s^2+4)}\\
+    \frac{h(t)}{2} \xrightarrow{\mathcal{L}}\frac{1}{2s}
+    \end{cases}\therefore \boxes{F(s) = \frac{1}{2}\left(\frac{s}{s^2+4} + \frac{1}{s}\right) 
+\end{equation*}
+
+\textbf{f)}
+Aqui podemos aplicar a propriedade da mudança de origem da imagem:
+\begin{equation*}
+    f(t)\xrightarrow{\mathcal{L}} F(s) = \int_0^\infty e^{at}cos(wz)e^{-sz}dz = \frac{1}{(a-s)^2+w^2}\left\{\left[(a-s)cos(wt)e^{(a-s)z}\right]^\infty_0 + \left[wsin(wt)e^{(a-s)t}\right]_0^\infty\right\} = 
+\end{equation*}
+\begin{equation*}
+    \frac{1}{(a-s)^2+w^2}(s-a)\therefore \boxed{F(s) = \frac{s-a}{(s-a)^2 + w^2}}
+\end{equation*}
+
+\textbf{h)} 
+
+Para achar a imagem podemos utilizar a propriedade da derivação de imagens:
+\begin{equation*}
+    (-1)^nt^ng(t) \xrightarrow{\mathcal{L}} G^{(n)} = F(s)
+\end{equation*}
+
+tomando então $g(t) = e^{t-3}$, então:
+\begin{equation*}
+    (-1)^2t^2e^{t-3} \xrightarrow{\mathcal{L}} G'' = F(s) = \int_0^\infty e^{t-3-st}dt = e^{-3} \int_0^\infty e^{(1-s)t}dt = e^{-3}\left[\frac{e^{(1-s)t}}{(1-s)}\right]^\infty_0 = \frac{e^{-3}}{1-s}\therefore
+\end{equation*}
+\begin{equation*}
+    G''(s) = \frac{\partial}{\partial s}\left[\frac{e^{-3}}{(1-s)}\right] = \frac{2e^{-3}}{(s-1)^3}
+\end{equation*}
+\begin{equation*}
+    \therefore \boxed{F(s) = \frac{2e^{-3}}{(s-1)^3}} 
+\end{equation*}
+
+\textbf{i)}
+
+Usamos da propriedade da mudança de origem da imagem:
+\begin{equation*}
+    e^{at}g(t) \xrightarrow{\mathcal{L}} G(s-a) = F(s)
+\end{equation*}
+onde $a=-3$ e $g(t) = sin(5t)$.
+
+Sabemos que:
+\begin{equation*}
+     sin(wt) \xrightarrow{\mathcal{L}} \frac{w}{s^2+w^2}
+\end{equation*}
+então 
+\begin{equation*}
+     sin(5t) \xrightarrow{\mathcal{L}} \frac{5}{s^2+25} \therefore
+\end{equation*}
+
+\begin{equation*}
+    \boxed{F(s) = G(s+3) = \frac{5}{(s+3)^2+25}}
+\end{equation*}
+
+\textbf{j)}
+
+Poderíamos tentar achar a imagem utilizando da linearidade e a da propriedade da derivada do original, todavia, nas definições da transformada, se pede que a função $f(t)\in\R$, mas como não é o caso, podemos dizer que essa $f(t)$ não tem transformada de Laplace.
+
+\textbf{k)}
+
+Neste caso usamos da propriedade do atraso de originais:
+
+\begin{equation*}
+    \begin{cases}
+    cosh(t-3) \xrightarrow{\mathcal{L}} e^{-3s}G(s)\\
+    cosh(t)\xrightarrow{\mathcal{L}} 
+    \end{cases}\longrightarrow \boxed{F(s) = \frac{s}{s^2-1}e^{-3s}}
+\end{equation*}

@@ -1,0 +1,16 @@
+\linespread{1.5}
+
+\textbf{Solução}
+
+Aqui sequer temos que determinar a série de Fourier em si, só precisamos lembrar do conceito que quando $k\rightarrow{}\infty$ a série de Fourier converge exatamente para a função que buscamos. A dica é desenhar o gráfico e olhar onde os valores de cada um aparecem no gráfico.
+
+É trivial portanto para $t=0,1$ e $3$ pois vai estar na região bem definida da série de Fourier
+\begin{itemize}
+    \item $t=0 \rightarrow f(t) = 0$;
+    \item $t=1 \rightarrow f(t) = 1$;
+    \item $t=3 \rightarrow f(t) = -2$;
+    \item $t=2$ é uma descontinuidade e apesar de na função declarada este ponto estar contido para $f(t) = t$, quando falamos em termos de série de Fourier as descontinuidades assumem um valor médio:
+    \begin{equation*}
+        f(t=desc) = \frac{f(t_-) + f(t_+)}{2} \Rightarrow f(2) = \frac{2 + (-2)}{2} = 0
+    \end{equation*}
+\end{itemize}
